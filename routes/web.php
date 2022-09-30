@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::prefix('/')->group(function () {
+    Route::get('/', 'HomeController@index');
+
+    Route::get('/catalogo', 'CatalogoController@index');
+    Route::get('/catalogo/{slug}', 'CatalogoController@show');
+    
+    Route::get('/produto/{slug}', 'ProdutoController@index');
 });
