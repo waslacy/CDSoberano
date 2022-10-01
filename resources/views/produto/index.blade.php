@@ -1,1 +1,5 @@
-pagina do produto: {{$slug}}
+@extends('layouts/site')
+
+@section('content')
+    
+@endsection

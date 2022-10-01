@@ -1,1 +1,5 @@
-pagina da categoria: {{$slug}}
+@extends('layouts/site')
+
+@section('content')
+    
+@endsection
