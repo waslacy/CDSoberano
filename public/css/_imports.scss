@@ -3,6 +3,9 @@
 $font-primary: 'Poppins', sans-serif;
 $font-secondary: 'Roboto', sans-serif;
 
+$color-primary: #000;
+$color-secondary: #fff;
+
 @mixin flex($justify, $align, $direction) {
     justify-content: $justify;
     align-items: $align;
