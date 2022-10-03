@@ -7,16 +7,18 @@ $color-primary: #000;
 $color-secondary: #fff;
 
 @mixin flex($justify, $align, $direction) {
+    display: flex;
     justify-content: $justify;
     align-items: $align;
     flex-direction: $direction;
 }
 
-@mixin button-full($bg-color, $color, $p-x, $p-y, $bg-color-hover, $color-hover) {
-    padding: $p-y $p-x;
+@mixin button-full($bg-color, $color, $padding, $bg-color-hover, $color-hover) {
+    padding: $padding;
     background-color: $bg-color;
     color: $color;
     border-radius: 5px;
+    text-decoration: none;
 
     &:hover {
         background-color: $bg-color-hover;
@@ -24,8 +26,8 @@ $color-secondary: #fff;
     }
 }
 
-@mixin button-full($border-color, $p-x, $p-y, $color-hover) {
-    padding: $p-y $p-x;
+@mixin button-border($border-color, $padding, $color-hover) {
+    padding: $padding;
     background-color: transparent;
     color: $border-color;
     border: 1px solid $border-color;
@@ -35,6 +37,12 @@ $color-secondary: #fff;
         background-color: $border-color;
         color: $color-hover;
     }
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 section {
