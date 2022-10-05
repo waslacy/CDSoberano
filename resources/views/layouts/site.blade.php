@@ -13,12 +13,13 @@
     <link rel="stylesheet" href="css/home/home.css">
     <link rel="stylesheet" href="css/catalog/catalog.css">
     <link rel="stylesheet" href="css/product/product.css">
+    <link rel="stylesheet" href="css/contato/contato.css">
 </head>
 
 <body>
     <header id="site-header">
         <div class="container">
-            <img src="src/logo.jpeg" alt="Logo Soberano" width="100">
+            <img src="src/logo.jpeg" alt="Logo Soberano" width="150">
 
             <nav class="site-nav">
                 <ul>
