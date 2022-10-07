@@ -1,10 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Roboto:wght@100;300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400&family=Work+Sans:wght@300;400;500;600&display=swap');
 
-$font-primary: 'Poppins', sans-serif;
-$font-secondary: 'Roboto', sans-serif;
+$font-primary: 'Tinos', serif;
+$font-secondary: 'Work Sans', sans-serif;
 
-$color-primary: #000;
-$color-secondary: #fff;
+$color-blue-dark: #1a1e34;
+$color-blue: #223a5b;
+$color-blue-light: #90a6c5;
+$color-blue-gray: #babbcc;
+
+$color-gray-dark: #434447;
+$color-gray: #747580;
+$color-gray-light: #e8e8eb;
+
+$color-brown-dark: #40312e;
+$color-brown: #7b6760;
+$color-brown-light: #dbd0c5;
+
+$color-dark: #242526;
+$color-dark-light: #444;
 
 @mixin flex($justify, $align, $direction) {
     display: flex;
@@ -32,11 +45,30 @@ $color-secondary: #fff;
     color: $border-color;
     border: 1px solid $border-color;
     border-radius: 5px;
+    text-decoration: none;
 
     &:hover {
         background-color: $border-color;
         color: $color-hover;
     }
+}
+
+@mixin linkAfter($color, $height) {
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 0;
+        height: $height;
+        background-color: $color;
+        transition: all .2s;
+    }
+
+    &:hover::after{
+        width: 100%;
+    } 
 }
 
 *{
@@ -46,7 +78,33 @@ $color-secondary: #fff;
 }
 
 section {
-    padding: 60px 0;
+    padding: 80px 0;
+    background-color: #f1f1f1;
+
+    h2 {
+        font-size: 3em;
+        color: $color-dark;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    p {
+        font-size: 1.1em;
+        margin-bottom: 30px;
+        text-align: center;
+        color: $color-dark-light;
+    }
+}
+
+section.brown {
+    background-color: $color-brown-light;
+
+    h2 {
+        font-size: 3em;
+        color: $color-brown-dark;
+        text-align: center;
+        margin-bottom: 30px;
+    }
 }
 
 .container {
@@ -72,23 +130,6 @@ label {
 a:not(.btn) {
     text-decoration: none;
     position: relative; 
-
-    @mixin linkAfter($color, $height) {
-        &:after {
-            content: "";
-            display: block;
-            position: absolute;
-            left: 0;
-            bottom: -5px;
-            width: 0;
-            height: $height;
-            background-color: $color;
-            transition: all .2s;
-        }
-
-        &:hover::after{
-            width: 100%;
-        } 
-    }
+    transition: all .2s;
 }
 
