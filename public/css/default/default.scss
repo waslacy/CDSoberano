@@ -1,12 +1,42 @@
 @import '../imports';
 
+html {
+    scroll-behavior: smooth;
+}
+
 #site-header {
+    position: absolute;
     padding: 20px 0;
-    box-shadow: 2px 0 10px rgba($color: #000000, $alpha: 0.5);
+    background-color: transparent;
     width: 100%;
+    transition: .3s linear;
 
     &.sticky {
         position: fixed;
+        background-color: $color-brown-light;
+        box-shadow: 2px 0 10px rgba($color: $color-brown-dark, $alpha: 0.6);
+        z-index: 999;
+
+        img.fixed {
+            display: none;
+        }
+
+        img.sticky {
+            display: block;
+        }
+
+        .site-nav a.link-nav {
+            color: $color-dark-light !important;
+            @include linkAfter($color-blue, 2px);
+
+            &:hover{
+                color: $color-blue !important;
+            }
+        }
+    }
+
+    img.sticky {
+        display: none
     }
 
     .container {
@@ -18,7 +48,14 @@
             list-style: none;
 
             a {
-                color: #111;
+                color: #fff;
+                font-size: 1.1em;
+                text-transform: uppercase;
+                @include linkAfter($color-brown, 2px);
+
+                &:hover {
+                    color: $color-brown;
+                }
             }
         }
     }

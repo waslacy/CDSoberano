@@ -1,1 +1,311 @@
 @import '../imports';
+
+#home {
+    min-height: 80vh;
+    padding: 0;
+    background: url('../../src/home-banner.jpg') center center;
+    background-size: cover;
+
+    .overlay {
+        background-color: rgba($color: $color-blue-dark, $alpha: 0.9);
+        width: 100%;
+    }
+
+    .container {
+        @include flex(center, flex-start, column);
+        min-height: 80vh;
+        gap: 40px;
+
+        h1 {
+            font-size: 3.6em;
+            font-weight: 400;
+            color: #fff;
+        }
+
+        a {
+            @include button-full($color-brown, #fff, 16px 32px, $color-brown-dark, #fff);
+        }
+    }
+}
+
+#sobre {
+    background-image: url('../../src/pattern-blue-dark.png');
+    background-position: bottom left;
+    background-repeat: repeat-y;
+    background-size: auto;
+
+    .beneficios {
+        @include flex(space-between, flex-start, row);
+        margin-bottom: 80px;
+
+        .box {
+            @include flex(center, center, column);
+            gap: 30px;
+            width: calc(33% - 20px);
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 5px 5px 8px rgba($color: $color-blue-light, $alpha: 1.0);
+            background-color: $color-blue;
+            color: #fff;
+            transition: .2s linear;
+
+            &:hover {
+                transform: translateY(-5px);
+                background-color: $color-brown-dark;
+            }
+
+            svg g {
+                fill: #fff;
+            }
+        }
+    }
+
+    .sobre {
+        @include flex(space-between, flex-start, row);
+        gap: 80px;
+
+        h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: $color-dark;
+        }
+
+        p {
+            text-align: justify;
+            color: $color-dark-light;
+            line-height: 1.6em;
+        }
+    }
+}
+
+#categorias {
+    background-image: url('../../src/pattern-brown-dark.png');
+    background-position: 0 0;
+    background-repeat: repeat-y;
+    background-size: auto;
+    
+    .container{
+        @include flex(inherit, center, column);
+    }
+
+    .categorias {
+        @include flex(space-between, flex-start, row);
+        flex-wrap: wrap;
+        gap: 20px;
+
+        .categoria {
+            width: calc(33% - 20px);
+            border-radius: 5px;
+            position: relative;
+            transition: .2s linear;
+            height: 220px;
+
+            &:hover {
+                scale: (1.05);
+                transform: translateY(-5px);
+                cursor: pointer;
+
+                .overlay {
+                    background: rgba($color: $color-blue-dark, $alpha: 0.1);
+
+                    h3 {
+                        opacity: 0;
+                    }
+                }
+            }
+
+            img {
+                border-radius: 5px;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .overlay {
+                @include flex(center, center, row);
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 10;
+                border-radius: 5px;
+                background-color: rgba($color: $color-blue-dark, $alpha: 0.7);
+                transition: .2s linear;
+
+                h3 {
+                    color: #fff;
+                    font-size: 1.6em;
+                }
+            }
+        }
+    }
+
+    a.btn {
+        @include button-full($color-brown-dark, #fff, 12px 26px, $color-blue, #fff);
+        margin-top: 40px;
+    }
+}
+
+#call-to-action {
+    &.call1 {
+        background-color: $color-blue-dark;
+        padding: 60px 0;
+        background-image: url('../../src/pattern-blue-light.png');
+        background-position: -2px -70px;
+        background-repeat: repeat-y;
+        background-size: auto;
+
+        .container {
+            @include flex(space-between, center, row);
+
+            h2 {
+                color: #fff;
+                margin-bottom: 0;
+            }
+
+            a.btn {
+                @include button-border(#fff, 16px 32px, $color-dark);
+            }
+        }
+    }
+}
+
+#depoimentos {
+    background-image: url('../../src/pattern-blue-dark.png');
+    background-position: 0 -55px;
+    background-repeat: repeat-y;
+    background-size: auto;
+
+    .container {
+        @include flex(flex-start, center, column);
+
+        .glide {
+            .glide__slides {
+                padding: 20px 0;
+
+                .glide__slide {
+                    @include flex(space-between, center, column);
+                    background-color: rgba($color: $color-gray, $alpha: 0.2);
+                    background-image: url('../../src/aspas-retas.png');
+                    background-repeat: no-repeat;
+                    background-position: 20px 0;
+                    background-size: 140px;
+                    padding: 50px 40px;
+                    border-radius: 10px;
+                    min-height: 450px;
+
+                    .top {
+                        @include flex(flex-start, center, column);
+                        gap: 20px;
+                    }
+
+                    span {
+                        width: 70px;
+                        height: 70px;
+                        background-color: $color-blue;
+                        color: #fff;
+                        border-radius: 100%;
+                        text-align: center;
+                        line-height: 70px;
+                        font-size: 1.4em;
+                    }
+
+                    p {
+                        text-align: justify;
+                    }
+
+                    h3 {
+                        color: $color-blue-dark;
+                        text-align: center;
+                    }
+
+                    h4 {
+                        color: $color-dark-light;
+                        text-align: center;
+                    }
+                }
+            }
+
+            .glide__bullets {
+                margin-top: 20px;
+                @include flex(center, flex-start, row);
+                gap: 10px;
+
+                button {
+                    padding: 7px 7px;
+                    border-radius: 50%;
+                    border: none;
+                    background-color: $color-blue-light;
+
+                    &.glide__bullet--active {
+                        background-color: $color-blue;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#contato {
+    background-image: url('../../src/pattern-brown-dark.png');
+    background-position: -1px 60px;
+    background-repeat: repeat-y;
+    background-size: auto;
+
+    form {
+        @include flex(flex-start, flex-start, column);
+
+        .form-group {
+            @include flex(flex-start, flex-start, column);
+            width: 100%;
+
+            label {
+                font-size: 1.2em;
+                color: $color-brown-dark;
+                margin-bottom: 10px;
+            }
+
+            input {
+                padding: 12px 30px;
+                background-color: transparent;
+                color: $color-dark;
+                border: none;
+                border-bottom: 1px solid $color-brown-dark;
+                outline: none;
+                font-size: 1.1em;
+            }
+
+            textarea {
+                border: none;
+                border-bottom: 1px solid $color-brown-dark;
+                background-color: transparent;
+                outline: none;
+                padding: 12px 30px;
+                color: $color-dark;
+                width: 100%;
+                font-size: 1.3em;
+            }
+        }
+
+        .column1 {
+            @include flex(space-between, center, row);
+            margin-bottom: 40px;
+            width: 100%;
+
+            .form-group {
+                width: calc(50% - 20px);
+
+                input {
+                    width: 100%;
+                }
+            }
+        }
+
+        button {
+            @include button-border($color-brown-dark , 16px 32px, #fff);
+            align-self: flex-end;
+            margin-top: 40px;
+            font-size: 1em;
+        }
+    }
+}
