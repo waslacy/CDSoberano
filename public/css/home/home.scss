@@ -32,7 +32,7 @@
     background-image: url('../../src/pattern-blue-dark.png');
     background-position: bottom left;
     background-repeat: repeat-y;
-    background-size: cover;
+    background-size: auto;
 
     .beneficios {
         @include flex(space-between, flex-start, row);
@@ -80,9 +80,9 @@
 
 #categorias {
     background-image: url('../../src/pattern-brown-dark.png');
-    background-position: -4px 0;
+    background-position: 0 0;
     background-repeat: repeat-y;
-    background-size: cover;
+    background-size: auto;
     
     .container{
         @include flex(inherit, center, column);
@@ -151,9 +151,9 @@
         background-color: $color-blue-dark;
         padding: 60px 0;
         background-image: url('../../src/pattern-blue-light.png');
-        background-position: -3px 110px;
+        background-position: -2px -70px;
         background-repeat: repeat-y;
-        background-size: cover;
+        background-size: auto;
 
         .container {
             @include flex(space-between, center, row);
@@ -172,9 +172,9 @@
 
 #depoimentos {
     background-image: url('../../src/pattern-blue-dark.png');
-    background-position: 2px -70px;
+    background-position: 0 -55px;
     background-repeat: repeat-y;
-    background-size: cover;
+    background-size: auto;
 
     .container {
         @include flex(flex-start, center, column);
@@ -247,6 +247,11 @@
 }
 
 #contato {
+    background-image: url('../../src/pattern-brown-dark.png');
+    background-position: -1px 60px;
+    background-repeat: repeat-y;
+    background-size: auto;
+
     form {
         @include flex(flex-start, flex-start, column);
 
@@ -267,7 +272,7 @@
                 border: none;
                 border-bottom: 1px solid $color-brown-dark;
                 outline: none;
-                font-size: 1.2em;
+                font-size: 1.1em;
             }
 
             textarea {
@@ -278,7 +283,7 @@
                 padding: 12px 30px;
                 color: $color-dark;
                 width: 100%;
-                font-size: 1.4em;
+                font-size: 1.3em;
             }
         }
 
@@ -300,6 +305,7 @@
             @include button-border($color-brown-dark , 16px 32px, #fff);
             align-self: flex-end;
             margin-top: 40px;
+            font-size: 1em;
         }
     }
 }
