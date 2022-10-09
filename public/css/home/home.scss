@@ -1,19 +1,26 @@
 @import '../imports';
 
 #home {
-    min-height: 80vh;
+    height: 80vh;
+    max-height: 800px;
     padding: 0;
     background: url('../../src/home-banner.jpg') center center;
     background-size: cover;
 
+
     .overlay {
         background-color: rgba($color: $color-blue-dark, $alpha: 0.9);
+        background-image: url('../../src/pattern-blue-light.png');
+        background-position: 0 17px;
+        background-repeat: repeat-y;
+        background-size: auto;
         width: 100%;
     }
 
     .container {
         @include flex(center, flex-start, column);
-        min-height: 80vh;
+        height: 80vh;
+        max-height: 800px;
         gap: 40px;
 
         h1 {
@@ -248,7 +255,7 @@
 
 #contato {
     background-image: url('../../src/pattern-brown-dark.png');
-    background-position: -1px 60px;
+    background-position: -1px 64px;
     background-repeat: repeat-y;
     background-size: auto;
 
@@ -306,6 +313,7 @@
             align-self: flex-end;
             margin-top: 40px;
             font-size: 1em;
+            cursor: pointer;
         }
     }
 }

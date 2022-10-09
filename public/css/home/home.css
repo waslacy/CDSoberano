@@ -59,13 +59,18 @@ a:not(.btn) {
 }
 
 #home {
-  min-height: 80vh;
+  height: 80vh;
+  max-height: 800px;
   padding: 0;
   background: url("../../src/home-banner.jpg") center center;
   background-size: cover;
 }
 #home .overlay {
   background-color: rgba(26, 30, 52, 0.9);
+  background-image: url("../../src/pattern-blue-light.png");
+  background-position: 0 17px;
+  background-repeat: repeat-y;
+  background-size: auto;
   width: 100%;
 }
 #home .container {
@@ -73,7 +78,8 @@ a:not(.btn) {
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-  min-height: 80vh;
+  height: 80vh;
+  max-height: 800px;
   gap: 40px;
 }
 #home .container h1 {
@@ -87,6 +93,8 @@ a:not(.btn) {
   color: #fff;
   border-radius: 5px;
   text-decoration: none;
+  border: none;
+  outline: none;
 }
 #home .container a:hover {
   background-color: #40312e;
@@ -214,6 +222,8 @@ a:not(.btn) {
   color: #fff;
   border-radius: 5px;
   text-decoration: none;
+  border: none;
+  outline: none;
   margin-top: 40px;
 }
 #categorias a.btn:hover {
@@ -329,7 +339,7 @@ a:not(.btn) {
 
 #contato {
   background-image: url("../../src/pattern-brown-dark.png");
-  background-position: -1px 60px;
+  background-position: -1px 64px;
   background-repeat: repeat-y;
   background-size: auto;
 }
@@ -394,6 +404,7 @@ a:not(.btn) {
   align-self: flex-end;
   margin-top: 40px;
   font-size: 1em;
+  cursor: pointer;
 }
 #contato form button:hover {
   background-color: #40312e;

@@ -19,8 +19,13 @@ Route::prefix('/')->group(function () {
     Route::post('/', 'HomeController@contact');
 
     Route::get('/catalogo', 'CatalogoController@index');
-    Route::get('/catalogo/{slug}', 'CatalogoController@show');
+    Route::get('/catalogo/{cat}', 'CatalogoController@show');
 
     Route::get('/contato', 'ContatoController@index');
     Route::post('/contato', 'ContatoController@contact');
+
+    Route::get('/admin', 'AdminController@index');
+    Route::get('/admin/edit/{cat}', 'AdminController@showEditCategory');
+    Route::get('/admin/{cat}', 'AdminCOntroller@listProducts');
+    Route::get('/admin/{cat}/edit/{prod}', 'AdminController@showEditProduct');
 });

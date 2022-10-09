@@ -20,12 +20,12 @@ class CatalogoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $slug
+     * @param  int  $cat
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+    public function show($cat)
     {
-        return view('catalogo/category',['slug'=>$slug]);
+        return view('catalogo/category', ['cat'=>$cat]);
     }
 
 }

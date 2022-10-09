@@ -32,6 +32,8 @@ $color-dark-light: #444;
     color: $color;
     border-radius: 5px;
     text-decoration: none;
+    border: none;
+    outline: none;
 
     &:hover {
         background-color: $bg-color-hover;

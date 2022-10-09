@@ -1,1 +1,101 @@
 @import '../imports';
+
+#filtro {
+    background-color: $color-brown;
+    padding: 50px 0;
+    color: #fff;
+
+    .container {
+        @include flex(space-between, center, row);
+        width: 100%;
+        gap: 20px;
+
+        .form-group {
+            @include flex(flex-start, flex-start, column);
+
+            label {
+                font-size: 1.2em;
+                margin-bottom: 20px;
+            }
+
+            input,
+            select {
+                padding: 12px 30px;
+                width: 100%;
+                border-radius: 5px;
+                border: none;
+                outline: none;
+            }
+
+            &.form1 {
+                width: calc(50% - 20px);
+            }
+
+            &.form2,
+            &.form3 {
+                width: calc(20% - 20px);
+            }
+
+            &.form4 {
+                align-self: flex-end;
+                width: calc(10% - 20px);
+                
+                button {
+                    @include button-full(#fff, #111, 14px 32px, $color-blue, #fff);
+                    align-self: flex-end;
+                }
+            }
+        }
+    }
+}
+
+#produtos {
+    .container {
+        .produto {
+            @include flex(space-between, flex-start, row);
+            gap: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid $color-blue;
+            margin: 20px 0;
+
+            .title-span {
+                @include flex(space-between, flex-start, row);
+            }
+
+            .spans {
+                margin-top: 5px;
+            }
+
+            img {
+                border-radius: 5px;
+                border: 1px solid $color-blue;
+            }
+            
+            h3 {
+                font-size: 1.6em;
+                margin-bottom: 10px;
+            }
+
+            span {
+                color: #fff;
+                font-size: 1.1em;
+                margin-right: 10px;
+                border-radius: 5px;
+                padding: 5px 20px;
+
+                &.brown {
+                    background-color: $color-brown;
+                }
+
+                &.blue {
+                    background-color: $color-blue;
+                }
+            }
+
+            p {
+                text-align: justify;
+                margin-top: 10px;
+            }
+        }
+    }
+}

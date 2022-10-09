@@ -1,1 +1,62 @@
-@import '../imports';
+@import "../imports";
+
+#banner {
+    height: 400px;
+    padding: 0;
+    background: url("../../src/home-banner.jpg") center center;
+    background-size: cover;
+
+    .overlay {
+        background-color: rgba($color: $color-blue-dark, $alpha: 0.9);
+        width: 100%;
+    }
+
+    .container {
+        @include flex(center, center, column);
+        height: 400px;
+
+        h1 {
+            font-size: 3.6em;
+            color: #fff;
+            text-align: center;
+            margin-top: 40px;
+        }
+    }
+}
+
+#categories {
+    .container {
+        @include flex(inherit, center, column);
+    }
+
+    .categorias {
+        @include flex(space-between, flex-start, row);
+        flex-wrap: wrap;
+        gap: 20px;
+
+        .categoria {
+            @include flex(space-between, center, column);
+            width: calc(20% - 20px);
+            border-radius: 10px;
+            background-color: #fff;
+            height: 220px;
+            padding: 10px 0;
+            box-shadow: 2px 2px 10px rgba($color: #888, $alpha: 0.3);
+            border: 1px solid $color-blue;
+            transition: 0.2s linear;
+
+            &:hover {
+                transform: translateY(-5px);
+                cursor: pointer;
+            }
+
+            h4 {
+                font-size: 1.4em;
+            }
+        }
+    }
+}
+
+#call-to-action.catalogo {
+    background-image: none;
+}

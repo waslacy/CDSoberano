@@ -63,7 +63,7 @@ html {
 
 #site-footer {
     padding: 40px 0;
-    background-color: #111;
+    background-color: $color-gray-dark;
 
     .container {
         @include flex(space-between, flex-start, row);
@@ -86,7 +86,11 @@ html {
                 gap: 10px;
 
                 a {
-                    color: #ccc;
+                    color: $color-gray-light;
+
+                    &:hover {
+                        color: $color-blue-light;
+                    }
                 }
             }
         }
@@ -97,22 +101,28 @@ html {
 
             p {
                 text-align: justify;
-                color: #ccc;
+                color: $color-gray-light;
                 margin-bottom: 25px;
             }
 
             a.btn {
                 align-self: flex-end;
                 color: #fff;
-                @include button-full(#fff, #111, 12px 28px, #eee, #111);
+                @include button-full(#fff, #111, 12px 28px, $color-gray-light, #111);
             }
         }
     }
 }
 
 #dev-footer {
-    padding: 20px 0;
-    background-color: #000000;
+    background: url('../../src/home-banner.jpg') center center;
+    background-size: cover;
+    padding: 0;
+
+    .overlay {
+        background-color: rgba($color: $color-blue-dark, $alpha: 0.9);
+        padding: 20px 0;
+    }
 
     .container {
         color: #fff;
