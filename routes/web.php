@@ -25,7 +25,10 @@ Route::prefix('/')->group(function () {
     Route::post('/contato', 'ContatoController@contact');
 
     Route::get('/admin', 'AdminController@index');
+
     Route::get('/admin/edit/{cat}', 'AdminController@showEditCategory');
+    Route::post('/admin/edit/{cat}', 'AdminController@editCategory');
+
     Route::get('/admin/{cat}', 'AdminCOntroller@listProducts');
     Route::get('/admin/{cat}/edit/{prod}', 'AdminController@showEditProduct');
 });

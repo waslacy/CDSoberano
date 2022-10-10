@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Category;
 
 class CatalogoController extends Controller
 {
@@ -13,7 +14,9 @@ class CatalogoController extends Controller
      */
     public function index()
     {
-        return view('catalogo/index');
+        $categorias = Category::get();
+
+        return view('catalogo/index')->with('categorias', $categorias);
     }
 
 

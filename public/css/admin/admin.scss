@@ -1,4 +1,4 @@
-@import '../imports';
+@import "../imports";
 
 body {
     @include flex(center, center, column);
@@ -10,6 +10,7 @@ section#categories {
     border-radius: 5px;
     padding: 50px 60px;
     box-shadow: 2px 2px 10px rgba($color: #000, $alpha: 0.6);
+    min-width: 800px;
 
     .header {
         @include flex(space-between, center, row-reverse);
@@ -23,6 +24,11 @@ section#categories {
         color: #fff;
         border-radius: 5px;
         border: none;
+        transition: .2s linear;
+
+        &:hover {
+            transform: translateY(-5px);
+        }
     }
 
     h1 {
@@ -33,22 +39,34 @@ section#categories {
         @include flex(space-between, center, row);
         flex-wrap: wrap;
         gap: 40px;
+    }
+
+    .new {
+        @include flex(flex-end, center, row);
+        margin-top: 30px;
 
         .category {
-            padding: 24px 36px;
-            background-color: $color-blue;
-            border-radius: 5px;
-            color: #fff;
+            width: auto;
+        }
+    }
 
-            &:hover {
-                background-color: rgba($color: $color-blue, $alpha: 0.95);
-                transform: translateY(-5px);
-            }
+    .category {
+        padding: 24px 36px;
+        width: calc(20% - 40px);
+        min-width: 150px;
+        background-color: $color-blue;
+        border-radius: 5px;
+        color: #fff;
+        text-align: center;
 
-            h3 {
-                font-family: $font-secondary;
-                font-weight: 400;
-            }
+        &:hover {
+            background-color: rgba($color: $color-blue, $alpha: 0.95);
+            transform: translateY(-5px);
+        }
+
+        h3 {
+            font-family: $font-secondary;
+            font-weight: 400;
         }
     }
 }
@@ -66,7 +84,7 @@ section#products {
     .buttons {
         @include flex(center, center, row);
         gap: 20px;
-        
+
         a.btn {
             text-decoration: none;
             padding: 16px 32px;
@@ -74,9 +92,14 @@ section#products {
             color: #fff;
             border-radius: 5px;
             border: none;
-            
+            transition: .2s linear;
+
             &:last-child {
                 background-color: rgb(166, 21, 21);
+            }
+
+            &:hover {
+                transform: translateY(-5px);
             }
         }
     }
@@ -88,7 +111,7 @@ section#products {
     .products {
         @include flex(space-between, center, row);
         flex-wrap: wrap;
-        gap: 40px
+        gap: 40px;
     }
 
     .product {
@@ -109,6 +132,74 @@ section#products {
 
         h3 {
             font-size: 1.4em;
+        }
+    }
+}
+
+#category-edit {
+    border-radius: 5px;
+    padding: 50px 60px;
+    box-shadow: 2px 2px 10px rgba($color: #000, $alpha: 0.6);
+    min-width: 800px;
+
+    .header {
+        @include flex(space-between, center, row-reverse);
+        margin-bottom: 60px;
+    }
+
+    a {
+        text-decoration: none;
+        padding: 16px 32px;
+        background-color: rgb(166, 21, 21);
+        color: #fff;
+        border-radius: 5px;
+        border: none;
+        transition: .2s linear;
+
+        &:hover {
+            transform: translateY(-5px);
+        }
+    }
+
+    h1 {
+        font-size: 2.6em;
+    }
+
+    form {
+        .form-group{
+            @include flex(flex-start, flex-start, column);
+            gap: 10px;
+            margin-bottom: 20px;
+
+            label {
+                font-size: 1.1em;
+            }
+
+            input[type=text] {
+                padding: 14px 30px;
+                width: 90%;
+                border-radius: 5px;
+                border: 1px solid $color-blue;
+            }
+
+            input[type=file] {
+                width: 90%;
+            }
+
+            button {
+                padding: 16px 30px;
+                background-color: $color-blue;
+                border-radius: 5px;
+                border: none;
+                color: #fff;
+                align-self: center;
+                margin-top: 20px;
+                transition: .2s linear;
+
+                &:hover {
+                    transform: translateY(-5px);
+                }
+            }
         }
     }
 }

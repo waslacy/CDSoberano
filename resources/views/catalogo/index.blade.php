@@ -15,10 +15,12 @@
 
             <div class="categorias">
                 <div class="categorias">
-                    <div class="categoria" onclick="window.location.href = 'catalogo/bixcoito'">
-                        <img src="src/bola.jpg" alt="item categoria" width="150">
-                        <h4>Titulo</h4>
-                    </div>
+                    @foreach ($categorias as $c)
+                        <div class="categoria" onclick="window.location.href = 'catalogo/{{ $c->name }}'">
+                            <img src="src/cat/{{ $c->image }}" alt="item categoria" width="150">
+                            <h4>{{ $c->name }}</h4>
+                        </div>
+                    @endforeach
     
                     <div class="categoria" onclick="window.location.href = 'catalogo/bixcoito'">
                         <img src="src/bola.jpg" alt="item categoria" width="150">

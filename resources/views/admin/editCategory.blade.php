@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -11,34 +11,29 @@
 </head>
 
 <body>
-    <section id="categories">
+    <section id="category-edit">
         <div class="container">
             <div class="header">
-                <img src="/src/logo.png" alt="Logo Soberano">
-                <h1>Categorias</h1>
+                <a href="/admin" class="btn">Voltar</a>
+                <h1>{{($cat == 'novo') ? 'Nova Categoria' : $cat}}</h1>
             </div>
 
-            <div class="categories">
-                <a href="/admin/opa" class="category">
-                    <h3>Nome categorias <i class="fa-solid fa-chevron-right"></i></h3>
-                </a>
+            <form action="/admin/edit/{{$cat}}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="form-group">
+                    <label for="name">Nome:</label>
+                    <input type="text" name="name" id="name" placeholder="Nome" required>
+                </div>
 
-                <a href="/admin/opa" class="category">
-                    <h3>Nome categorias <i class="fa-solid fa-chevron-right"></i></h3>
-                </a>
+                <div class="form-group">
+                    <label for="image">Imagem</label>
+                    <input type="file" name="image" accept="image/png, image/jpeg, image/jpg" required/>
+                </div>
 
-                <a href="/admin/opa" class="category">
-                    <h3>Nome categorias <i class="fa-solid fa-chevron-right"></i></h3>
-                </a>
-
-                <a href="/admin/opa" class="category">
-                    <h3>Nome categorias <i class="fa-solid fa-chevron-right"></i></h3>
-                </a>
-
-                <a href="/admin/opa" class="category">
-                    <h3>Nova categoria <i class="fa-solid fa-plus"></i></h3>
-                </a>
-            </div>
+                <div class="form-group">
+                    <button type="submit">{{($cat == 'novo') ? 'Criar' : 'Atualizar'}}</button>
+                </div>
+            </form>
         </div>
     </section>
 
