@@ -15,14 +15,14 @@
         <div class="container">
             <div class="header">
                 <a href="/admin" class="btn">Voltar</a>
-                <h1>{{($cat == 'novo') ? 'Nova Categoria' : $cat}}</h1>
+                <h1>{{($cat == 'novo') ? 'Nova Categoria' : $categoria->name}}</h1>
             </div>
 
             <form action="/admin/edit/{{$cat}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                     <label for="name">Nome:</label>
-                    <input type="text" name="name" id="name" placeholder="Nome" required>
+                    <input type="text" name="name" id="name" placeholder="Nome" required @if ($cat != 'novo') value="{{$categoria->name}}" @endif>
                 </div>
 
                 <div class="form-group">

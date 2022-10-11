@@ -116,13 +116,16 @@ a:not(.btn) {
 
 #produtos .container .produto {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-start;
   flex-direction: row;
   gap: 40px;
   padding-bottom: 20px;
   border-bottom: 1px solid #223a5b;
   margin: 20px 0;
+}
+#produtos .container .produto .right-column {
+  width: 100%;
 }
 #produtos .container .produto .title-span {
   display: flex;

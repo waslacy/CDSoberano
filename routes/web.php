@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,7 +29,10 @@ Route::prefix('/')->group(function () {
 
     Route::get('/admin/edit/{cat}', 'AdminController@showEditCategory');
     Route::post('/admin/edit/{cat}', 'AdminController@editCategory');
+    Route::get('/admin/remove/{cat}', 'AdminController@removeCategory');
 
     Route::get('/admin/{cat}', 'AdminCOntroller@listProducts');
     Route::get('/admin/{cat}/edit/{prod}', 'AdminController@showEditProduct');
+    Route::post('/admin/{cat}/edit/{prod}', 'AdminController@editProduct');
+    Route::get('/admin/{cat}/remove/{prod}', 'AdminController@removeProduct');
 });

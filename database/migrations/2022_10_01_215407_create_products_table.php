@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('name');
             $table->text('description');
             $table->string('image');
+            $table->string('marca');
+            $table->string('tipo');
             $table->softDeletes();
             $table->timestamps();
         });

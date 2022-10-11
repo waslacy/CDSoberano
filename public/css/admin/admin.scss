@@ -53,7 +53,7 @@ section#categories {
     .category {
         padding: 24px 36px;
         width: calc(20% - 40px);
-        min-width: 150px;
+        min-width: 200px;
         background-color: $color-blue;
         border-radius: 5px;
         color: #fff;
@@ -75,6 +75,7 @@ section#products {
     border-radius: 5px;
     padding: 50px 60px;
     box-shadow: 2px 2px 10px rgba($color: #000, $alpha: 0.6);
+    min-width: 800px;
 
     .header {
         @include flex(space-between, center, row-reverse);
@@ -109,18 +110,17 @@ section#products {
     }
 
     .products {
-        @include flex(space-between, center, row);
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
         gap: 40px;
     }
 
     .product {
         @include flex(space-between, center, column);
-        width: calc(20% - 20px);
         border-radius: 10px;
         background-color: #fff;
         height: 220px;
-        padding: 10px 0;
+        padding: 15px 0;
         box-shadow: 2px 2px 10px rgba($color: #888, $alpha: 0.3);
         border: 1px solid $color-blue;
         transition: 0.2s linear;
@@ -132,11 +132,12 @@ section#products {
 
         h3 {
             font-size: 1.4em;
+            color: $color-dark;
         }
     }
 }
 
-#category-edit {
+#category-edit, #product-edit {
     border-radius: 5px;
     padding: 50px 60px;
     box-shadow: 2px 2px 10px rgba($color: #000, $alpha: 0.6);
@@ -150,11 +151,15 @@ section#products {
     a {
         text-decoration: none;
         padding: 16px 32px;
-        background-color: rgb(166, 21, 21);
+        background-color: $color-blue;
         color: #fff;
         border-radius: 5px;
         border: none;
         transition: .2s linear;
+
+        &.delete {
+            background-color: rgb(166, 21, 21);
+        }
 
         &:hover {
             transform: translateY(-5px);
@@ -199,6 +204,13 @@ section#products {
                 &:hover {
                     transform: translateY(-5px);
                 }
+            }
+
+            textarea {
+                padding: 14px 30px;
+                width: 90%;
+                border-radius: 5px;
+                border: 1px solid $color-blue;
             }
         }
     }

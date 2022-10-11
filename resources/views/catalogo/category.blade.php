@@ -44,96 +44,32 @@
 
     <section id="produtos">
         <div class="container">
-            <div class="produto">
-                <div class="left-column">
-                    <img src="/src/bola.jpg" alt="Foto produto" width="150">
-                </div>
-
-                <div class="right-column">
-                    <div class="title-span">
-                        <h3>Titulo Produto</h3>
-                        <div class="spans">
-                            <span class="brown">Tipo: bola</span>
-                            <span class="blue">Marca: bola</span>
-                        </div>
+            @foreach ($produtos as $p)
+                <div class="produto">
+                    <div class="left-column">
+                        <img src="/src/prod/{{$p->image}}" alt="Foto produto" width="150">
                     </div>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo blanditiis molestias quas
-                        quia nihil velit autem pariatur aspernatur dolorem saepe unde.</p>
-                </div>
-            </div>
 
-            <div class="produto">
-                <div class="left-column">
-                    <img src="/src/bola.jpg" alt="Foto produto" width="150">
-                </div>
-
-                <div class="right-column">
-                    <div class="title-span">
-                        <h3>Titulo Produto</h3>
-                        <div class="spans">
-                            <span class="brown">Tipo: bola</span>
-                            <span class="blue">Marca: bola</span>
+                    <div class="right-column">
+                        <div class="title-span">
+                            <h3>{{$p->name}}</h3>
+                            <div class="spans">
+                                <span class="brown">Tipo: {{$p->tipo}}</span>
+                                <span class="blue">Marca: {{$p->marca}}</span>
+                            </div>
                         </div>
+                        <p>{{$p->description}}</p>
                     </div>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo blanditiis molestias quas
-                        quia nihil velit autem pariatur aspernatur dolorem saepe unde.</p>
                 </div>
-            </div>
-
-            <div class="produto">
-                <div class="left-column">
-                    <img src="/src/bola.jpg" alt="Foto produto" width="150">
-                </div>
-
-                <div class="right-column">
-                    <div class="title-span">
-                        <h3>Titulo Produto</h3>
-                        <div class="spans">
-                            <span class="brown">Tipo: bola</span>
-                            <span class="blue">Marca: bola</span>
-                        </div>
-                    </div>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo blanditiis molestias quas
-                        quia nihil velit autem pariatur aspernatur dolorem saepe unde.</p>
-                </div>
-            </div>
-
-            <div class="produto">
-                <div class="left-column">
-                    <img src="/src/bola.jpg" alt="Foto produto" width="150">
-                </div>
-
-                <div class="right-column">
-                    <div class="title-span">
-                        <h3>Titulo Produto</h3>
-                        <div class="spans">
-                            <span class="brown">Tipo: bola</span>
-                            <span class="blue">Marca: bola</span>
-                        </div>
-                    </div>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo blanditiis molestias quas
-                        quia nihil velit autem pariatur aspernatur dolorem saepe unde.</p>
-                </div>
-            </div>
-
-            <div class="produto">
-                <div class="left-column">
-                    <img src="/src/bola.jpg" alt="Foto produto" width="150">
-                </div>
-
-                <div class="right-column">
-                    <div class="title-span">
-                        <h3>Titulo Produto</h3>
-                        <div class="spans">
-                            <span class="brown">Tipo: bola</span>
-                            <span class="blue">Marca: bola</span>
-                        </div>
-                    </div>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo blanditiis molestias quas
-                        quia nihil velit autem pariatur aspernatur dolorem saepe unde.</p>
-                </div>
-            </div>
+            @endforeach
         </div>
+    </section>
+
+    <section id="call-to-action" class="call1 catalogo">
+        <div class="container">
+            <h2>Você precisa, Nós suprimos!</h2>
+
+            <a href="#" class="btn">Solicite um orçamento</a>
         </div>
     </section>
 @endsection

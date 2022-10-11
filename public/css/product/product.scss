@@ -52,11 +52,15 @@
 #produtos {
     .container {
         .produto {
-            @include flex(space-between, flex-start, row);
+            @include flex(flex-start, flex-start, row);
             gap: 40px;
             padding-bottom: 20px;
             border-bottom: 1px solid $color-blue;
             margin: 20px 0;
+
+            .right-column {
+                width: 100%;
+            }
 
             .title-span {
                 @include flex(space-between, flex-start, row);

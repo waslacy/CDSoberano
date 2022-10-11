@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -11,34 +11,49 @@
 </head>
 
 <body>
-    <section id="categories">
+    <section id="product-edit">
         <div class="container">
             <div class="header">
-                <img src="/src/logo.png" alt="Logo Soberano">
-                <h1>Categorias</h1>
+                <div class="buttons">
+                    <a href="/admin" class="btn">Voltar</a>
+                    @if ($prod != 'novo')
+                        <a href="/admin/{{$cat}}/remove/{{$prod}}" class="btn delete">Excluir</a>
+                    @endif
+                </div>
+                <h1>{{($prod == 'novo') ? 'Novo Produto' : $produto->name}}</h1>
             </div>
 
-            <div class="categories">
-                <a href="/admin/opa" class="category">
-                    <h3>Nome categorias <i class="fa-solid fa-chevron-right"></i></h3>
-                </a>
+            <form action="/admin/{{$cat}}/edit/{{$prod}}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="form-group">
+                    <label for="name">Nome:</label>
+                    <input type="text" name="name" id="name" placeholder="Nome" required @if ($prod != 'novo') value="{{$produto->name}}" @endif>
+                </div>
 
-                <a href="/admin/opa" class="category">
-                    <h3>Nome categorias <i class="fa-solid fa-chevron-right"></i></h3>
-                </a>
+                <div class="form-group">
+                    <label for="tipo">Tipo:</label>
+                    <input type="text" name="tipo" id="tipo" placeholder="Tipo" required @if ($prod != 'novo') value="{{$produto->tipo}}" @endif>
+                </div>
 
-                <a href="/admin/opa" class="category">
-                    <h3>Nome categorias <i class="fa-solid fa-chevron-right"></i></h3>
-                </a>
+                <div class="form-group">
+                    <label for="marca">Marca:</label>
+                    <input type="text" name="marca" id="marca" placeholder="Marca" required @if ($prod != 'novo') value="{{$produto->marca}}" @endif>
+                </div>
 
-                <a href="/admin/opa" class="category">
-                    <h3>Nome categorias <i class="fa-solid fa-chevron-right"></i></h3>
-                </a>
+                <div class="form-group">
+                    <label for="description">Descrição:</label>
+                    <textarea type="text" name="description" id="description" placeholder="Descrição" required @if ($prod != 'novo') value="{{$produto->description}}" @endif></textarea>
+                </div>
 
-                <a href="/admin/opa" class="category">
-                    <h3>Nova categoria <i class="fa-solid fa-plus"></i></h3>
-                </a>
-            </div>
+                <div class="form-group">
+                    <label for="image">Imagem</label>
+                    <input type="file" name="image" accept="image/png, image/jpeg, image/jpg" required/>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit">{{($prod == 'novo') ? 'Criar' : 'Atualizar'}}</button>
+                </div>
+            </form>
         </div>
     </section>
 

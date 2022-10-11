@@ -17,35 +17,22 @@
                 <div class="buttons">
                     <a class="btn" href="/admin">Voltar</a>
                     <a class="btn" href="/admin/edit/{{$cat}}">Editar</a>
-                    <a class="btn">Excluir</a>
+                    <a class="btn" href="/admin/remove/{{$cat}}">Excluir</a>
                 </div>
-                <h1>{{ $cat }}</h1>
+                <h1>{{ $categoryName }}</h1>
             </div>
 
             <div class="products">
-                <a href="/admin/{{$cat}}/edit/opa" class="product">
-                    <img src="/src/bola.jpg" alt="produto imagem" width="150">
-                    <h3>Nome</h3>
-                </a>
+                @foreach ($produtos as $p)
+                    <a href="/admin/{{$cat}}/edit/{{$p->id}}" class="product">
+                        <img src="/src/prod/{{$p->image}}" alt="produto imagem" width="150">
+                        <h3>{{$p->name}}</h3>
+                    </a>
+                @endforeach
 
-                <a href="/admin/{{$cat}}/edit/opa" class="product">
-                    <img src="/src/bola.jpg" alt="produto imagem" width="150">
-                    <h3>Nome</h3>
-                </a>
-
-                <a href="/admin/{{$cat}}/edit/opa" class="product">
-                    <img src="/src/bola.jpg" alt="produto imagem" width="150">
-                    <h3>Nome</h3>
-                </a>
-
-                <a href="/admin/{{$cat}}/edit/opa" class="product">
-                    <img src="/src/bola.jpg" alt="produto imagem" width="150">
-                    <h3>Nome</h3>
-                </a>
-
-                <a href="/admin/{{$cat}}/edit/opa" class="product">
-                    <img src="/src/bola.jpg" alt="produto imagem" width="150">
-                    <h3>Nome</h3>
+                <a href="/admin/{{$cat}}/edit/novo" class="product">
+                    <img src="/src/add.png" alt="produto imagem" width="100">
+                    <h3>Novo</h3>
                 </a>
             </div>
         </div>
