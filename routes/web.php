@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,8 +16,23 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('/')->group(function () {
     Route::get('/', 'HomeController@index');
+    Route::get('/home', 'HomeController@index');
     Route::post('/', 'HomeController@contact');
 
     Route::get('/catalogo', 'CatalogoController@index');
-    Route::get('/catalogo/{slug}', 'CatalogoController@show');
+    Route::get('/catalogo/{cat}', 'CatalogoController@show');
+
+    Route::get('/contato', 'ContatoController@index');
+    Route::post('/contato', 'ContatoController@contact');
+
+    Route::get('/admin', 'AdminController@index');
+
+    Route::get('/admin/edit/{cat}', 'AdminController@showEditCategory');
+    Route::post('/admin/edit/{cat}', 'AdminController@editCategory');
+    Route::get('/admin/remove/{cat}', 'AdminController@removeCategory');
+
+    Route::get('/admin/{cat}', 'AdminCOntroller@listProducts');
+    Route::get('/admin/{cat}/edit/{prod}', 'AdminController@showEditProduct');
+    Route::post('/admin/{cat}/edit/{prod}', 'AdminController@editProduct');
+    Route::get('/admin/{cat}/remove/{prod}', 'AdminController@removeProduct');
 });

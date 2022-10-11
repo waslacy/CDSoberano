@@ -15,6 +15,8 @@ class Product extends Model
         'Category_id',
         'name',
         'description',
+        'marca',
+        'tipo',
         'image'
     ];
 

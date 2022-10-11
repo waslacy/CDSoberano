@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Category;
+use App\Models\Product;
 
 class CatalogoController extends Controller
 {
@@ -13,19 +15,26 @@ class CatalogoController extends Controller
      */
     public function index()
     {
-        return view('catalogo/index');
+        $categorias = Category::get();
+
+        return view('catalogo/index')->with('categorias', $categorias);
     }
 
 
     /**
-     * Display the specified resource.
+     * Display the specified category.
      *
-     * @param  int  $slug
+     * @param  int  $cat
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+    public function show($cat)
     {
-        return view('catalogo/category',['slug'=>$slug]);
+        $categoria = Category::where('name', $cat)->first();
+        $produtos = Product::where('Category_id', $categoria->id)->get();
+
+        return view('catalogo/category')
+        ->with('cat', $cat)
+        ->with('produtos', $produtos);
     }
 
 }

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Roboto:wght@100;300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400&family=Work+Sans:wght@300;400;500;600&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -6,7 +6,30 @@
 }
 
 section {
-  padding: 60px 0;
+  padding: 80px 0;
+  background-color: #f1f1f1;
+}
+section h2 {
+  font-size: 3em;
+  color: #242526;
+  text-align: center;
+  margin-bottom: 30px;
+}
+section p {
+  font-size: 1.1em;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #444;
+}
+
+section.brown {
+  background-color: #dbd0c5;
+}
+section.brown h2 {
+  font-size: 3em;
+  color: #40312e;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 .container {
@@ -19,17 +42,82 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: "Poppins", sans-serif;
+  font-family: "Tinos", serif;
 }
 
 span,
 a,
 p,
 label {
-  font-family: "Roboto", sans-serif;
+  font-family: "Work Sans", sans-serif;
 }
 
 a:not(.btn) {
   text-decoration: none;
   position: relative;
+  transition: all 0.2s;
+}
+
+#banner {
+  height: 400px;
+  padding: 0;
+  background: url("../../src/home-banner.jpg") center center;
+  background-size: cover;
+}
+#banner .overlay {
+  background-color: rgba(26, 30, 52, 0.9);
+  width: 100%;
+}
+#banner .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 400px;
+}
+#banner .container h1 {
+  font-size: 3.6em;
+  color: #fff;
+  text-align: center;
+  margin-top: 40px;
+}
+
+#categories .container {
+  display: flex;
+  justify-content: inherit;
+  align-items: center;
+  flex-direction: column;
+}
+#categories .categorias {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+#categories .categorias .categoria {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  width: calc(20% - 20px);
+  border-radius: 10px;
+  background-color: #fff;
+  height: 220px;
+  padding: 10px 0;
+  box-shadow: 2px 2px 10px rgba(136, 136, 136, 0.3);
+  border: 1px solid #223a5b;
+  transition: 0.2s linear;
+}
+#categories .categorias .categoria:hover {
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+#categories .categorias .categoria h4 {
+  font-size: 1.4em;
+}
+
+#call-to-action.catalogo {
+  background-image: none;
 }/*# sourceMappingURL=catalog.css.map */
