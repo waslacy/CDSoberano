@@ -66,7 +66,7 @@ a:not(.btn) {
   background-size: cover;
 }
 #home .overlay {
-  background-color: rgba(26, 30, 52, 0.9);
+  background-color: rgba(26, 30, 52, 0.85);
   background-image: url("../../src/pattern-blue-light.png");
   background-position: 0 17px;
   background-repeat: repeat-y;
@@ -171,6 +171,7 @@ a:not(.btn) {
   align-items: flex-start;
   flex-direction: row;
   flex-wrap: wrap;
+  width: 100%;
   gap: 20px;
 }
 #categorias .categorias .categoria {
@@ -349,6 +350,13 @@ a:not(.btn) {
   align-items: flex-start;
   flex-direction: column;
 }
+#contato form .message-envio {
+  color: rgb(23, 203, 23);
+  align-self: center;
+  justify-self: center;
+  margin: 20px 0;
+  font-size: 1.2em;
+}
 #contato form .form-group {
   display: flex;
   justify-content: flex-start;
@@ -380,7 +388,7 @@ a:not(.btn) {
   width: 100%;
   font-size: 1.3em;
 }
-#contato form .column1 {
+#contato form .row {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -388,10 +396,10 @@ a:not(.btn) {
   margin-bottom: 40px;
   width: 100%;
 }
-#contato form .column1 .form-group {
+#contato form .row .form-group {
   width: calc(50% - 20px);
 }
-#contato form .column1 .form-group input {
+#contato form .row .form-group input {
   width: 100%;
 }
 #contato form button {

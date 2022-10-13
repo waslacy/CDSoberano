@@ -94,6 +94,7 @@ a:not(.btn) {
   align-items: flex-start;
   flex-direction: row;
   flex-wrap: wrap;
+  width: 100%;
   gap: 20px;
 }
 #categories .categorias .categoria {
@@ -113,6 +114,10 @@ a:not(.btn) {
 #categories .categorias .categoria:hover {
   transform: translateY(-5px);
   cursor: pointer;
+}
+#categories .categorias .categoria img {
+  max-height: 150px;
+  overflow-y: hidden;
 }
 #categories .categorias .categoria h4 {
   font-size: 1.4em;

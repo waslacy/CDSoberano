@@ -10,34 +10,35 @@
     </section>
 
     <section id="filtro">
-        <div class="container">
+        <form action="/catalogo/{{$cat}}/filtro" method="POST" class="container">
+            @csrf
             <div class="form-group form1">
-                <label for="product-title">Pesquisar por nome</label>
-                <input type="text" name="product-title" id="product-title" placeholder="buscar...">
+                <label for="name">Pesquisar por nome</label>
+                <input type="text" name="name" id="name" placeholder="buscar...">
             </div>
 
             <div class="form-group form2">
                 <label for="marca">Marca</label>
                 <select name="marca" id="marca">
-                    <option value="bola">Bola</option>
-                    <option value="bola">Bola</option>
-                    <option value="bola">Bola</option>
-                    <option value="bola">Bola</option>
+                    <option value="all">Qualquer</option>
+                    @foreach ($marcas as $m)
+                        <option value="{{$m->marca}}">{{$m->marca}}</option>
+                    @endforeach
                 </select>
             </div>
 
             <div class="form-group form3">
                 <label for="tipo">Tipo</label>
                 <select name="tipo" id="tipo">
-                    <option value="bola">Bola</option>
-                    <option value="bola">Bola</option>
-                    <option value="bola">Bola</option>
-                    <option value="bola">Bola</option>
+                    <option value="all">Qualquer</option>
+                    @foreach ($tipos as $t)
+                        <option value="{{$t->tipo}}">{{$t->tipo}}</option>
+                    @endforeach
                 </select>
             </div>
 
             <div class="form-group form4">
-                <button>Filtrar</button>
+                <button type="submit">Filtrar</button>
             </div>
         </div>
     </section>
@@ -69,7 +70,7 @@
         <div class="container">
             <h2>Você precisa, Nós suprimos!</h2>
 
-            <a href="#" class="btn">Solicite um orçamento</a>
+            <a href="/orcamento" class="btn">Solicite um orçamento</a>
         </div>
     </section>
 @endsection

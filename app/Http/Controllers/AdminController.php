@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Testimonial;
 
 class AdminController extends Controller
 {
@@ -18,8 +19,11 @@ class AdminController extends Controller
     public function index()
     {
         $categorias = Category::select('id', 'name')->get();
+        $depoimentos = Testimonial::select('id', 'name')->get();
 
-        return view('admin/index', ['categorias' => $categorias]);
+        return view('admin/index')
+        ->with('categorias', $categorias)
+        ->with('depoimentos', $depoimentos);
     }
 
     public function showEditCategory($cat)
@@ -30,6 +34,17 @@ class AdminController extends Controller
             $categoria = Category::where('id', $cat)->first();
 
             return view('admin/editCategory', ['cat' => $cat, 'categoria' => $categoria]);
+        }
+    }
+
+    public function showEditTestimonial($testi)
+    {
+        if ($testi == 'novo'){
+            return view('admin/editTestimonial', ['testi' => $testi]);
+        } else {
+            $testimonial = Testimonial::where('id', $testi)->first();
+
+            return view('admin/editTestimonial', ['testi' => $testi, 'testimonial' => $testimonial]);
         }
     }
 
@@ -60,46 +75,67 @@ class AdminController extends Controller
     {
         if ($cat == 'novo') {
             $categoria = new Category();
-
-            $categoryName = $request->name;
-            $image = $request->image;
-            $extension = $image->extension();
-            $imageName = md5($image->getClientOriginalName() . strtotime("now")) . '.' . $extension;
-            $image->move(public_path('src/cat'), $imageName);
-
-            $categoria->name = $categoryName;
-            $categoria->image = $imageName;
-            $categoria->save();
-
-            return redirect('/admin');
+        } else {
+            $categoria = Category::where('id', $cat)->first();
         }
+
+        $categoryName = $request->name;
+        $image = $request->image;
+        $extension = $image->extension();
+        $imageName = md5($image->getClientOriginalName() . strtotime("now")) . '.' . $extension;
+        $image->move(public_path('src/cat'), $imageName);
+
+        $categoria->name = $categoryName;
+        $categoria->image = $imageName;
+        $categoria->save();
+
+        return redirect('/admin');
     }
 
     public function editProduct(Request $request, $cat, $prod)
     {
         if ($prod == 'novo') {
             $produto = new Product();
-
-            $productName = $request->name;
-            $productDescription = $request->description;
-            $productType = $request->tipo;
-            $productMarca = $request->marca;
-
-            $image = $request->image;
-            $extension = $image->extension();
-            $imageName = md5($image->getClientOriginalName() . strtotime("now")) . '.' . $extension;
-            $image->move(public_path('src/prod'), $imageName);
-
-            $produto->name = $productName;
-            $produto->description = $productDescription;
-            $produto->tipo = $productType;
-            $produto->marca = $productMarca;
-            $produto->image = $imageName;
-            $produto->Category_id = $cat;
-            $produto->save();
-
-            return redirect('/admin' . '/' . $cat);
+        } else {
+            $produto = Product::where('id', $prod)->first();
         }
+
+        $productName = $request->name;
+        $productDescription = $request->description;
+        $productType = $request->tipo;
+        $productMarca = $request->marca;
+
+        $image = $request->image;
+        $extension = $image->extension();
+        $imageName = md5($image->getClientOriginalName() . strtotime("now")) . '.' . $extension;
+        $image->move(public_path('src/prod'), $imageName);
+
+        $produto->name = $productName;
+        $produto->description = $productDescription;
+        $produto->tipo = $productType;
+        $produto->marca = $productMarca;
+        $produto->image = $imageName;
+        $produto->Category_id = $cat;
+        $produto->save();
+
+        return redirect('/admin' . '/' . $cat);
+    }
+
+    public function editTestimonial(Request $request, $testi)
+    {
+        if ($testi == 'novo'){
+            $depoimento = new Testimonial();
+        } else {
+            $depoimento = Testimonial::where('id', $testi)->first();
+        }
+
+        $depoimento->name = $request->name;
+        $depoimento->sigla = $request->sigla;
+        $depoimento->empresa = $request->empresa;
+        $depoimento->depoimento = $request->depoimento;
+        $depoimento->save();
+
+        return redirect('/admin');
     }
 
     /* FUNÇOES DE REMOVE DB */
@@ -124,5 +160,13 @@ class AdminController extends Controller
         $produto->delete();
 
         return redirect('/admin' . '/' . $cat);
+    }
+
+    public function removeTestimonial($testi)
+    {
+        $testimonial = Testimonial::where('id', $testi)->first();
+        $testimonial->delete();
+
+        return redirect('/admin');
     }
 }
