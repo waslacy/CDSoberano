@@ -32,6 +32,7 @@
     .categorias {
         @include flex(space-between, flex-start, row);
         flex-wrap: wrap;
+        width: 100%;
         gap: 20px;
 
         .categoria {
@@ -48,6 +49,11 @@
             &:hover {
                 transform: translateY(-5px);
                 cursor: pointer;
+            }
+
+            img {
+                max-height: 150px;
+                overflow-y: hidden;
             }
 
             h4 {

@@ -5,7 +5,7 @@
         <div class="overlay">
             <div class="container">
                 <h1>Reduza custos e amplie seu negócio!</h1>
-                <a href="#orçamento" class="btn">Solicite um orçamento</a>
+                <a href="/orcamento" class="btn">Solicite um orçamento</a>
             </div>
         </div>
     </section>
@@ -235,49 +235,14 @@
             <p>aaaaaaaaaaaaaaaaa</p>
 
             <div class="categorias">
-                <div class="categoria">
-                    <img src="src/home-banner.jpg" alt="imagem categoria">
-                    <div class="overlay">
-                        <h3>Titulo</h3>
+                @foreach ($categorias as $c)
+                    <div class="categoria" onclick="window.location.href='/catalogo/{{$c->name}}'">
+                        <img src="src/cat/{{$c->image}}" alt="imagem categoria">
+                        <div class="overlay">
+                            <h3>{{$c->name}}</h3>
+                        </div>
                     </div>
-                </div>
-
-                <div class="categoria">
-                    <img src="src/bola.jpg" alt="imagem categoria">
-                    <div class="overlay">
-                        <h3>Titulo</h3>
-                    </div>
-                </div>
-
-                <div class="categoria">
-                    <img src="src/home-banner.jpg" alt="imagem categoria">
-                    <div class="overlay">
-                        <h3>Titulo</h3>
-                    </div>
-                </div>
-
-                <div class="categoria">
-                    <img src="src/home-banner.jpg" alt="imagem categoria">
-                    <div class="overlay">
-                        <h3>Titulo</h3>
-                    </div>
-                </div>
-
-
-                <div class="categoria">
-                    <img src="src/home-banner.jpg" alt="imagem categoria">
-                    <div class="overlay">
-                        <h3>Titulo</h3>
-                    </div>
-                </div>
-
-
-                <div class="categoria">
-                    <img src="src/home-banner.jpg" alt="imagem categoria">
-                    <div class="overlay">
-                        <h3>Titulo</h3>
-                    </div>
-                </div>
+                @endforeach
             </div>
 
             <a class="btn" href="/catalogo">Veja mais</a>
@@ -288,7 +253,7 @@
         <div class="container">
             <h2>Você precisa, Nós suprimos!</h2>
 
-            <a href="#" class="btn">Solicite um orçamento</a>
+            <a href="/orcamento" class="btn">Solicite um orçamento</a>
         </div>
     </section>
 
@@ -301,59 +266,27 @@
             <div class="glide">
                 <div class="glide__track" data-glide-el="track">
                     <ul class="glide__slides">
-                        <li class="glide__slide">
-                            <div class="top">
-                                <span>WZ</span>
-                                <p>
-                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores facilis consequuntur
-                                    alias dolorum voluptate similique laboriosam tempore! Explicabo at laudantium libero et
-                                    molestiae, aliquid necessitatibus quae nisi culpa nesciunt.
-                                </p>
-                            </div>
-                            <div class="bot">
-                                <h3>Wallace Zatorski</h3>
-                                <h4>CEO Petrobras</h4>
-                            </div>
-                        </li>
-
-                        <li class="glide__slide">
-                            <div class="top">
-                                <span>WZ</span>
-                                <p>
-                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores facilis consequuntur
-                                    alias
-                                    doloru voluptate similiquelaudantium libero et molestiae, aliquid necessitatibus quae
-                                    nisi
-                                    culpa nesciunt.
-                                </p>
-                            </div>
-                            <div class="bot">
-                                <h3>Wallace Zatorski</h3>
-                                <h4>CEO Petrobras</h4>
-                            </div>
-                        </li>
-
-                        <li class="glide__slide">
-                            <div class="top">
-                                <span>WZ</span>
-                                <p>
-                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores facilis consequuntur
-                                    alias
-                                    necessitatibus quae nisi culpa nesciunt.
-                                </p>
-                            </div>
-                            <div class="bot">
-                                <h3>Wallace Zatorski</h3>
-                                <h4>CEO Petrobras</h4>
-                            </div>
-                        </li>
+                        @foreach ($depoimentos as $d)
+                            <li class="glide__slide">
+                                <div class="top">
+                                    <span>{{$d->sigla}}</span>
+                                    <p>
+                                       {{$d->depoimento}}
+                                    </p>
+                                </div>
+                                <div class="bot">
+                                    <h3>{{$d->name}}</h3>
+                                    <h4>{{$d->empresa}}</h4>
+                                </div>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
 
                 <div class="glide__bullets" data-glide-el="controls[nav]">
-                    <button class="glide__bullet" data-glide-dir="=0"></button>
-                    <button class="glide__bullet" data-glide-dir="=1"></button>
-                    <button class="glide__bullet" data-glide-dir="=2"></button>
+                    @foreach ($depoimentos as $key => $d)
+                        <button class="glide__bullet" data-glide-dir="{{$key}}"></button>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -363,13 +296,13 @@
         <div class="container">
             <h2>Tem alguma dúvida? Entre em contato</h2>
 
-            <form action="/contato">
+            <form action="/" method="POST">
                 @csrf
 
-                <div class="column1">
+                <div class="row">
                     <div class="form-group">
                         <label for="name">Nome</label>
-                        <input type="text" placeholder="Nome" name="nome">
+                        <input type="text" placeholder="Nome" name="name">
                     </div>
     
                     <div class="form-group">
@@ -382,6 +315,12 @@
                     <label for="message">Mensagem</label>
                     <textarea name="message" cols="30" rows="6" placeholder="Mensagem"></textarea>
                 </div>
+
+                @if ($message = Session::get('success'))
+                    <div class="message-envio">
+                        <h3>{{$message}}</h3>
+                    </div>
+                @endif
 
                 <button type="submit">Enviar</button>
             </form>

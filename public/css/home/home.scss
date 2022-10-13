@@ -9,7 +9,7 @@
 
 
     .overlay {
-        background-color: rgba($color: $color-blue-dark, $alpha: 0.9);
+        background-color: rgba($color: $color-blue-dark, $alpha: 0.85);
         background-image: url('../../src/pattern-blue-light.png');
         background-position: 0 17px;
         background-repeat: repeat-y;
@@ -98,6 +98,7 @@
     .categorias {
         @include flex(space-between, flex-start, row);
         flex-wrap: wrap;
+        width: 100%;
         gap: 20px;
 
         .categoria {
@@ -262,6 +263,14 @@
     form {
         @include flex(flex-start, flex-start, column);
 
+        .message-envio {
+            color: rgb(23, 203, 23);
+            align-self: center;
+            justify-self: center;
+            margin: 20px 0;
+            font-size: 1.2em
+        }
+
         .form-group {
             @include flex(flex-start, flex-start, column);
             width: 100%;
@@ -294,7 +303,7 @@
             }
         }
 
-        .column1 {
+        .row {
             @include flex(space-between, center, row);
             margin-bottom: 40px;
             width: 100%;

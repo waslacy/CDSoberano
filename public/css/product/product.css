@@ -138,6 +138,8 @@ a:not(.btn) {
 }
 #produtos .container .produto img {
   border-radius: 5px;
+  padding: 10px;
+  background-color: #fff;
   border: 1px solid #223a5b;
 }
 #produtos .container .produto h3 {

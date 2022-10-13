@@ -17,11 +17,11 @@ html {
         box-shadow: 2px 0 10px rgba($color: $color-brown-dark, $alpha: 0.6);
         z-index: 999;
 
-        img.fixed {
+        a.fixed {
             display: none;
         }
 
-        img.sticky {
+        a.sticky {
             display: block;
         }
 
@@ -35,7 +35,7 @@ html {
         }
     }
 
-    img.sticky {
+    a.sticky {
         display: none
     }
 

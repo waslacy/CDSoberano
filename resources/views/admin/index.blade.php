@@ -40,6 +40,30 @@
         </div>
     </section>
 
+    <section id="testimonials">
+        <div class="container">
+            <h1>Depoimentos</h1>
+
+            <div class="testimonials">
+                @foreach ($depoimentos as $d)
+                    <a href="/admin/testimonial/{{ $d->id }}" class="testimonial">
+                        <h3>{{ $d->name }} <i class="fa-solid fa-chevron-right"></i></h3>
+                    </a>
+                @endforeach
+                
+                @if ($depoimentos == '[]')
+                    <h3 style="color: #f00">Não há depoimentos cadastrados no momento</h3>
+                @endif
+            </div>
+
+            <div class="new">
+                <a href="/admin/testimonial/novo" class="testimonial">
+                    <h3>Novo Depoimento <i class="fa-solid fa-plus"></i></h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
         integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="

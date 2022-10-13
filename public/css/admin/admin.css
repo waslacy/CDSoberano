@@ -67,20 +67,21 @@ body {
   background-color: #434447;
 }
 
-section#categories {
+section#categories, section#testimonials {
   border-radius: 5px;
   padding: 50px 60px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
   min-width: 800px;
+  margin-bottom: 50px;
 }
-section#categories .header {
+section#categories .header, section#testimonials .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row-reverse;
   margin-bottom: 30px;
 }
-section#categories a.btn {
+section#categories a.btn, section#testimonials a.btn {
   text-decoration: none;
   padding: 16px 32px;
   background-color: rgb(166, 21, 21);
@@ -89,13 +90,16 @@ section#categories a.btn {
   border: none;
   transition: 0.2s linear;
 }
-section#categories a.btn:hover {
+section#categories a.btn:hover, section#testimonials a.btn:hover {
   transform: translateY(-5px);
 }
-section#categories h1 {
+section#categories h1, section#testimonials h1 {
   font-size: 2.4em;
 }
-section#categories .categories {
+section#categories .testimonials, section#testimonials .testimonials {
+  margin-top: 30px;
+}
+section#categories .categories, section#categories .testimonials, section#testimonials .categories, section#testimonials .testimonials {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -103,17 +107,17 @@ section#categories .categories {
   flex-wrap: wrap;
   gap: 40px;
 }
-section#categories .new {
+section#categories .new, section#testimonials .new {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   flex-direction: row;
   margin-top: 30px;
 }
-section#categories .new .category {
+section#categories .new .category, section#categories .new .testimonial, section#testimonials .new .category, section#testimonials .new .testimonial {
   width: auto;
 }
-section#categories .category {
+section#categories .category, section#categories .testimonial, section#testimonials .category, section#testimonials .testimonial {
   padding: 24px 36px;
   width: calc(20% - 40px);
   min-width: 200px;
@@ -122,11 +126,11 @@ section#categories .category {
   color: #fff;
   text-align: center;
 }
-section#categories .category:hover {
+section#categories .category:hover, section#categories .testimonial:hover, section#testimonials .category:hover, section#testimonials .testimonial:hover {
   background-color: rgba(34, 58, 91, 0.95);
   transform: translateY(-5px);
 }
-section#categories .category h3 {
+section#categories .category h3, section#categories .testimonial h3, section#testimonials .category h3, section#testimonials .testimonial h3 {
   font-family: "Work Sans", sans-serif;
   font-weight: 400;
 }
@@ -182,7 +186,7 @@ section#products .product {
   border-radius: 10px;
   background-color: #fff;
   height: 220px;
-  padding: 15px 0;
+  padding: 15px 10px;
   box-shadow: 2px 2px 10px rgba(136, 136, 136, 0.3);
   border: 1px solid #223a5b;
   transition: 0.2s linear;
@@ -190,6 +194,10 @@ section#products .product {
 section#products .product:hover {
   transform: translateY(-5px);
   cursor: pointer;
+}
+section#products .product img {
+  max-height: 150px;
+  overflow-y: hidden;
 }
 section#products .product h3 {
   font-size: 1.4em;

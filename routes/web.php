@@ -21,15 +21,20 @@ Route::prefix('/')->group(function () {
 
     Route::get('/catalogo', 'CatalogoController@index');
     Route::get('/catalogo/{cat}', 'CatalogoController@show');
+    Route::post('/catalogo/{cat}/filtro', 'CatalogoController@showFilteredProducts');
 
-    Route::get('/contato', 'ContatoController@index');
-    Route::post('/contato', 'ContatoController@contact');
+    Route::get('/orcamento', 'OrcamentoController@index');
+    Route::post('/orcamento', 'OrcamentoController@orcamento');
 
     Route::get('/admin', 'AdminController@index');
 
     Route::get('/admin/edit/{cat}', 'AdminController@showEditCategory');
     Route::post('/admin/edit/{cat}', 'AdminController@editCategory');
     Route::get('/admin/remove/{cat}', 'AdminController@removeCategory');
+
+    Route::get('/admin/testimonial/{testi}', 'AdminController@showEditTestimonial');
+    Route::post('/admin/testimonial/{testi}', 'AdminController@editTestimonial');
+    Route::get('/admin/testimonial/remove/{testi}', 'AdminController@removeTestimonial');
 
     Route::get('/admin/{cat}', 'AdminCOntroller@listProducts');
     Route::get('/admin/{cat}/edit/{prod}', 'AdminController@showEditProduct');

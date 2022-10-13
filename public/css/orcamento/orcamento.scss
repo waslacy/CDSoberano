@@ -1,0 +1,80 @@
+@import '../imports';
+
+#orcamento {
+    form {
+        @include flex(flex-start, flex-start, column);
+
+        .message-envio {
+            color: rgb(23, 203, 23);
+            align-self: center;
+            justify-self: center;
+            margin: 20px 0;
+            font-size: 1.2em
+        }
+
+        .form-group {
+            @include flex(flex-start, flex-start, column);
+            width: 100%;
+
+            label {
+                font-size: 1.2em;
+                color: $color-brown-dark;
+                margin-bottom: 10px;
+            }
+
+            input {
+                padding: 12px 30px;
+                background-color: transparent;
+                color: $color-dark;
+                border: none;
+                border-bottom: 1px solid $color-brown-dark;
+                outline: none;
+                font-size: 1.1em;
+            }
+
+            textarea {
+                border: none;
+                border-bottom: 1px solid $color-brown-dark;
+                background-color: transparent;
+                outline: none;
+                padding: 12px 30px;
+                color: $color-dark;
+                width: 100%;
+                font-size: 1.3em;
+            }
+        }
+
+        .row {
+            @include flex(space-between, center, row);
+            margin-bottom: 40px;
+            width: 100%;
+
+            .form-group {
+                width: calc(50% - 20px);
+
+                input {
+                    width: 100%;
+                }
+
+                select {
+                    width: 100%;
+                    padding: 12px 30px;
+                    background-color: transparent;
+                    color: $color-dark;
+                    border-radius: 5px;
+                    border-bottom: 1px solid $color-brown-dark;
+                    outline: none;
+                    font-size: 1.1em;
+                }
+            }
+        }
+
+        button {
+            @include button-border($color-brown-dark , 16px 32px, #fff);
+            align-self: flex-end;
+            margin-top: 40px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+    }
+}

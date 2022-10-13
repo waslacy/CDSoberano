@@ -75,10 +75,10 @@ html {
   box-shadow: 2px 0 10px rgba(64, 49, 46, 0.6);
   z-index: 999;
 }
-#site-header.sticky img.fixed {
+#site-header.sticky a.fixed {
   display: none;
 }
-#site-header.sticky img.sticky {
+#site-header.sticky a.sticky {
   display: block;
 }
 #site-header.sticky .site-nav a.link-nav {
@@ -101,7 +101,7 @@ html {
 #site-header.sticky .site-nav a.link-nav:hover {
   color: #223a5b !important;
 }
-#site-header img.sticky {
+#site-header a.sticky {
   display: none;
 }
 #site-header .container {

@@ -14,14 +14,14 @@
     <link rel="stylesheet" href="/css/home/home.css">
     <link rel="stylesheet" href="/css/catalog/catalog.css">
     <link rel="stylesheet" href="/css/product/product.css">
-    <link rel="stylesheet" href="/css/contato/contato.css">
+    <link rel="stylesheet" href="/css/orcamento/orcamento.css">
 </head>
 
 <body>
     <header id="site-header">
         <div class="container">
-            <img src="/src/logo-branco.png" alt="Logo Soberano" width="200" class="fixed">
-            <img src="/src/logo.png" alt="Logo Soberano" class="sticky" width="200">
+            <a href="/" class="fixed"><img src="/src/logo-branco.png" alt="Logo Soberano" width="200"></a>
+            <a href="/" class="sticky"><img src="/src/logo.png" alt="Logo Soberano" width="200"></a>
 
             <nav class="site-nav">
                 <ul>
@@ -29,7 +29,7 @@
                     <li><a href="/home#sobre" class="link-nav">Quem Somos</a></li>
                     <li><a href="/catalogo" class="link-nav">Catalogo</a></li>
                     <li><a href="/home#contato" class="link-nav">Contato</a></li>
-                    <li><a href="/contato" class="link-nav">Orçamento</a></li>
+                    <li><a href="/orcamento" class="link-nav">Orçamento</a></li>
                 </ul>
             </nav>
         </div>
@@ -40,7 +40,7 @@
     <section id="site-footer">
         <div class="container">
             <div class="col1">
-                <img src="/src/logo-branco.png" alt="Logo Soberano" width="260">
+                <a href="/"><img src="/src/logo-branco.png" alt="Logo Soberano" width="260"></a>
             </div>
 
             <div class="col2">
@@ -51,7 +51,7 @@
                         <li><a href="/home#sobre" class="link-nav">Quem Somos</a></li>
                         <li><a href="/catalogo" class="link-nav">Catalogo</a></li>
                         <li><a href="/home#contato" class="link-nav">Contato</a></li>
-                        <li><a href="/contato" class="link-nav">Orçamento</a></li>
+                        <li><a href="/orcamento" class="link-nav">Orçamento</a></li>
                     </ul>
                 </nav>
             </div>

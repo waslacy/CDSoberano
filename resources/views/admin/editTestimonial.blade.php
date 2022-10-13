@@ -16,42 +16,37 @@
             <div class="header">
                 <div class="buttons">
                     <a href="/admin" class="btn">Voltar</a>
-                    @if ($prod != 'novo')
-                        <a href="/admin/{{$cat}}/remove/{{$prod}}" class="btn delete">Excluir</a>
+                    @if ($testi != 'novo')
+                        <a href="/admin/testimonial/remove/{{$testi}}" class="btn delete">Excluir</a>
                     @endif
                 </div>
-                <h1>{{($prod == 'novo') ? 'Novo Produto' : $produto->name}}</h1>
+                <h1>{{($testi == 'novo') ? 'Novo Depoimento' : $testimonial->name}}</h1>
             </div>
 
-            <form action="/admin/{{$cat}}/edit/{{$prod}}" method="POST" enctype="multipart/form-data">
+            <form action="/admin/testimonial/{{$testi}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                     <label for="name">Nome:</label>
-                    <input type="text" name="name" id="name" placeholder="Nome" required @if ($prod != 'novo') value="{{$produto->name}}" @endif>
+                    <input type="text" name="name" id="name" placeholder="Nome" required @if ($testi != 'novo') value="{{$testimonial->name}}" @endif>
                 </div>
 
                 <div class="form-group">
-                    <label for="tipo">Tipo:</label>
-                    <input type="text" name="tipo" id="tipo" placeholder="Tipo" required @if ($prod != 'novo') value="{{$produto->tipo}}" @endif>
+                    <label for="sigla">Sigla:</label>
+                    <input type="text" name="sigla" id="sigla" placeholder="Sigla" required @if ($testi != 'novo') value="{{$testimonial->sigla}}" @endif>
                 </div>
 
                 <div class="form-group">
-                    <label for="marca">Marca:</label>
-                    <input type="text" name="marca" id="marca" placeholder="Marca" required @if ($prod != 'novo') value="{{$produto->marca}}" @endif>
+                    <label for="empresa">Empresa:</label>
+                    <input type="text" name="empresa" id="empresa" placeholder="Empresa" required @if ($testi != 'novo') value="{{$testimonial->empresa}}" @endif>
                 </div>
 
                 <div class="form-group">
-                    <label for="description">Descrição:</label>
-                    <textarea type="text" name="description" id="description" placeholder="Descrição" required>@if ($prod != 'novo') {{$produto->description}} @endif</textarea>
+                    <label for="depoimento">Depoimento:</label>
+                    <textarea type="text" name="depoimento" rows="4" id="depoimento" placeholder="Depoimento" required>@if($testi != 'novo'){{$testimonial->depoimento}}@endif</textarea>
                 </div>
 
                 <div class="form-group">
-                    <label for="image">Imagem</label>
-                    <input type="file" name="image" accept="image/png, image/jpeg, image/jpg" @if ($prod == 'novo') required @endif/>
-                </div>
-
-                <div class="form-group">
-                    <button type="submit">{{($prod == 'novo') ? 'Criar' : 'Atualizar'}}</button>
+                    <button type="submit">{{($testi == 'novo') ? 'Criar' : 'Atualizar'}}</button>
                 </div>
             </form>
         </div>

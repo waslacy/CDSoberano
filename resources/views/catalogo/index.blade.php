@@ -21,55 +21,6 @@
                             <h4>{{ $c->name }}</h4>
                         </div>
                     @endforeach
-    
-                    <div class="categoria" onclick="window.location.href = 'catalogo/bixcoito'">
-                        <img src="src/bola.jpg" alt="item categoria" width="150">
-                        <h4>Titulo</h4>
-                    </div>
-    
-                    <div class="categoria" onclick="window.location.href = 'catalogo/bixcoito'">
-                        <img src="src/bola.jpg" alt="item categoria" width="150">
-                        <h4>Titulo</h4>
-                    </div>
-    
-                    <div class="categoria" onclick="window.location.href = 'catalogo/bixcoito'">
-                        <img src="src/bola.jpg" alt="item categoria" width="150">
-                        <h4>Titulo</h4>
-                    </div>
-    
-    
-                    <div class="categoria" onclick="window.location.href = 'catalogo/bixcoito'">
-                        <img src="src/bola.jpg" alt="item categoria" width="150">
-                        <h4>Titulo</h4>
-                    </div>
-    
-    
-                    <div class="categoria" onclick="window.location.href = 'catalogo/bixcoito'">
-                        <img src="src/bola.jpg" alt="item categoria" width="150">
-                        <h4>Titulo</h4>
-                    </div>
-
-                    <div class="categoria" onclick="window.location.href = 'catalogo/bixcoito'">
-                        <img src="src/bola.jpg" alt="item categoria" width="150">
-                        <h4>Titulo</h4>
-                    </div>
-    
-                    <div class="categoria" onclick="window.location.href = 'catalogo/bixcoito'">
-                        <img src="src/bola.jpg" alt="item categoria" width="150">
-                        <h4>Titulo</h4>
-                    </div>
-    
-    
-                    <div class="categoria" onclick="window.location.href = 'catalogo/bixcoito'">
-                        <img src="src/bola.jpg" alt="item categoria" width="150">
-                        <h4>Titulo</h4>
-                    </div>
-    
-    
-                    <div class="categoria" onclick="window.location.href = 'catalogo/bixcoito'">
-                        <img src="src/bola.jpg" alt="item categoria" width="150">
-                        <h4>Titulo</h4>
-                    </div>
                 </div>
             </div>
         </div>
@@ -79,7 +30,7 @@
         <div class="container">
             <h2>Você precisa, Nós suprimos!</h2>
 
-            <a href="#" class="btn">Solicite um orçamento</a>
+            <a href="/orcamento" class="btn">Solicite um orçamento</a>
         </div>
     </section>
 @endsection

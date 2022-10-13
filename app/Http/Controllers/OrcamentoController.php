@@ -4,34 +4,33 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
-use App\Models\Testimonial;
 use Illuminate\Support\Facades\Mail;
-use App\Mail\SendContact;
+use App\Mail\SendOrcamento;
 
-class HomeController extends Controller
+class OrcamentoController extends Controller
 {
     public function index()
     {
         $categorias = Category::get();
-        $depoimentos = Testimonial::get();
 
-        return view('home/index')
-        ->with('categorias', $categorias)
-        ->with('depoimentos', $depoimentos);
+        return view('orcamento/index')
+        ->with('categorias', $categorias);
     }
 
-    public function contact(Request $request)
+    public function orcamento(Request $request)
     {
         $data = array(
             'name' => $request->name,
             'email' => $request->email,
+            'tel' => $request->tel,
+            'cat' => $request->cat,
             'message' => $request->message
         );
 
         Mail::to(config('mail.from.address'))
-        ->send(new SendContact($data));
+        ->send(new SendOrcamento($data));
 
-        return redirect('/home#contato')
+        return back()
         ->with('success', 'Mensagem enviada com sucesso!');
     }
 }
