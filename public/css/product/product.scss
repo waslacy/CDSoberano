@@ -8,6 +8,7 @@
     .container {
         @include flex(space-between, center, row);
         width: 100%;
+        flex-wrap: wrap;
         gap: 20px;
 
         .form-group {
@@ -29,20 +30,40 @@
 
             &.form1 {
                 width: calc(50% - 20px);
+
+                @media screen and (max-width: 768px) {
+                    width: calc(100% - 20px);
+                }
             }
 
             &.form2,
             &.form3 {
                 width: calc(20% - 20px);
+
+                @media screen and (max-width: 768px) {
+                    width: calc(35% - 20px);
+                }
+
+                @media screen and (max-width: 450px) {
+                    width: calc(100% - 20px);
+                }
             }
 
             &.form4 {
                 align-self: flex-end;
                 width: calc(10% - 20px);
+
+                @media screen and (max-width: 450px) {
+                    width: calc(100% - 20px);
+                }
                 
                 button {
                     @include button-full(#fff, #111, 14px 32px, $color-blue, #fff);
                     align-self: flex-end;
+
+                    @media screen and (max-width: 450px) {
+                        align-self: center;
+                    }
                 }
             }
         }
@@ -58,6 +79,26 @@
             border-bottom: 1px solid $color-blue;
             margin: 20px 0;
 
+            @media screen and (max-width: 450px) {
+                flex-wrap: wrap;
+
+                .left-column {
+                    width: 100%;
+                    @include flex(center, flex-start, row)
+                }
+
+                .right-column {
+                    .title-span {
+                        @include flex(flex-start, center, column);
+
+                        .spans {
+                            @include flex(space-between, flex-start, row);
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
+            }
+
             .right-column {
                 width: 100%;
             }
@@ -68,6 +109,11 @@
 
             .spans {
                 margin-top: 5px;
+                
+                @media screen and (max-width: 768px) {
+                    @include flex(flex-start, flex-start, column);
+                    gap: 10px;
+                }
             }
 
             img {

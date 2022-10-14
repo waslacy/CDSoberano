@@ -27,7 +27,7 @@
 
                 <div class="form-group">
                     <label for="image">Imagem</label>
-                    <input type="file" name="image" accept="image/png, image/jpeg, image/jpg" required @if ($prod == 'novo') required @endif/>
+                    <input type="file" name="image" accept="image/png, image/jpeg, image/jpg" required @if ($cat == 'novo') required @endif/>
                 </div>
 
                 <div class="form-group">

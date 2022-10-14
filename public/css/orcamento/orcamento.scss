@@ -49,6 +49,16 @@
             margin-bottom: 40px;
             width: 100%;
 
+            @media screen and (max-width: 450px) {
+                flex-wrap: wrap;
+                margin-bottom: 0;
+
+                .form-group {
+                    width: calc(100% - 20px) !important;
+                    margin-bottom: 20px;
+                }
+            }
+
             .form-group {
                 width: calc(50% - 20px);
 
@@ -75,6 +85,10 @@
             margin-top: 40px;
             font-size: 1em;
             cursor: pointer;
+
+            @media screen and (max-width: 450px) {
+                align-self: center;
+            }
         }
     }
 }

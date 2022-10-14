@@ -18,6 +18,10 @@ class AdminController extends Controller
      */
     public function index()
     {
+        if (!session('user_logged')){
+            return redirect('/login');
+        }
+
         $categorias = Category::select('id', 'name')->get();
         $depoimentos = Testimonial::select('id', 'name')->get();
 
@@ -28,6 +32,10 @@ class AdminController extends Controller
 
     public function showEditCategory($cat)
     {
+        if (!session('user_logged')){
+            return redirect('/login');
+        }
+
         if ($cat == 'novo') {
             return view('admin/editCategory', ['cat' => $cat]);
         } else {
@@ -39,6 +47,10 @@ class AdminController extends Controller
 
     public function showEditTestimonial($testi)
     {
+        if (!session('user_logged')){
+            return redirect('/login');
+        }
+        
         if ($testi == 'novo'){
             return view('admin/editTestimonial', ['testi' => $testi]);
         } else {
@@ -50,6 +62,10 @@ class AdminController extends Controller
 
     public function listProducts($cat)
     {
+        if (!session('user_logged')){
+            return redirect('/login');
+        }
+
         $categoryName = Category::where('id', $cat)->value('name');
 
         $produtos = Product::where('Category_id', $cat)->get();
@@ -59,6 +75,10 @@ class AdminController extends Controller
 
     public function showEditProduct($cat, $prod)
     {
+        if (!session('user_logged')){
+            return redirect('/login');
+        }
+        
         if ($prod == 'novo') {
             return view('admin/editProduct', ['cat' => $cat, 'prod' => $prod]);
         } else {
@@ -80,13 +100,17 @@ class AdminController extends Controller
         }
 
         $categoryName = $request->name;
-        $image = $request->image;
-        $extension = $image->extension();
-        $imageName = md5($image->getClientOriginalName() . strtotime("now")) . '.' . $extension;
-        $image->move(public_path('src/cat'), $imageName);
+        
+        if ($request->image){
+            $image = $request->image;
+            $extension = $image->extension();
+            $imageName = md5($image->getClientOriginalName() . strtotime("now")) . '.' . $extension;
+            $image->move(public_path('src/cat'), $imageName);
+
+            $categoria->image = $imageName;
+        }
 
         $categoria->name = $categoryName;
-        $categoria->image = $imageName;
         $categoria->save();
 
         return redirect('/admin');
@@ -105,16 +129,19 @@ class AdminController extends Controller
         $productType = $request->tipo;
         $productMarca = $request->marca;
 
-        $image = $request->image;
-        $extension = $image->extension();
-        $imageName = md5($image->getClientOriginalName() . strtotime("now")) . '.' . $extension;
-        $image->move(public_path('src/prod'), $imageName);
+        if ($request->image){
+            $image = $request->image;
+            $extension = $image->extension();
+            $imageName = md5($image->getClientOriginalName() . strtotime("now")) . '.' . $extension;
+            $image->move(public_path('src/prod'), $imageName);
+
+            $produto->image = $imageName;
+        }
 
         $produto->name = $productName;
         $produto->description = $productDescription;
         $produto->tipo = $productType;
         $produto->marca = $productMarca;
-        $produto->image = $imageName;
         $produto->Category_id = $cat;
         $produto->save();
 

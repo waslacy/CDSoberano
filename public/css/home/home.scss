@@ -15,6 +15,11 @@
         background-repeat: repeat-y;
         background-size: auto;
         width: 100%;
+
+        @media screen and (max-width: 1430px) {
+            background-image: none;
+        }
+        
     }
 
     .container {
@@ -41,9 +46,15 @@
     background-repeat: repeat-y;
     background-size: auto;
 
+    @media screen and (max-width: 1430px) {
+        background-image: none;
+    }
+
     .beneficios {
         @include flex(space-between, flex-start, row);
         margin-bottom: 80px;
+        flex-wrap: wrap;
+        gap: 20px;
 
         .box {
             @include flex(center, center, column);
@@ -55,6 +66,17 @@
             background-color: $color-blue;
             color: #fff;
             transition: .2s linear;
+            text-align: center;
+
+            @media screen and (max-width: 920px) {
+                gap: 15px;
+                padding: 30px 10px;
+                width: calc(33% - 15px);
+            }
+
+            @media screen and (max-width: 450px) {
+                width: calc(100% - 20px);
+            }
 
             &:hover {
                 transform: translateY(-5px);
@@ -70,6 +92,15 @@
     .sobre {
         @include flex(space-between, flex-start, row);
         gap: 80px;
+        
+        @media screen and (max-width: 768px) {
+            justify-content: center;
+            flex-wrap: wrap;
+            
+            h3 {
+                text-align: center;
+            }
+        }
 
         h3 {
             font-size: 2em;
@@ -90,6 +121,10 @@
     background-position: 0 0;
     background-repeat: repeat-y;
     background-size: auto;
+
+    @media screen and (max-width: 1430px) {
+        background-image: none;
+    }
     
     .container{
         @include flex(inherit, center, column);
@@ -107,6 +142,10 @@
             position: relative;
             transition: .2s linear;
             height: 220px;
+
+            @media screen and (max-width: 450px) {
+                width: calc(100% - 20px);
+            }
 
             &:hover {
                 scale: (1.05);
@@ -143,6 +182,7 @@
                 h3 {
                     color: #fff;
                     font-size: 1.6em;
+                    text-align: center
                 }
             }
         }
@@ -157,22 +197,38 @@
 #call-to-action {
     &.call1 {
         background-color: $color-blue-dark;
-        padding: 60px 0;
+        padding: 30px 0;
         background-image: url('../../src/pattern-blue-light.png');
         background-position: -2px -70px;
         background-repeat: repeat-y;
         background-size: auto;
 
+        @media screen and (max-width: 1430px) {
+            background-image: none;
+        }
+
         .container {
             @include flex(space-between, center, row);
+            flex-wrap: wrap;
+
+            @media screen and (max-width: 450px) {
+                justify-content: center;
+
+                h2 {
+                    text-align: center !important;
+                    margin-bottom: 20px !important;
+                }
+            }
 
             h2 {
                 color: #fff;
                 margin-bottom: 0;
+                text-align: start;
+                flex: 1;
             }
 
             a.btn {
-                @include button-border(#fff, 16px 32px, $color-dark);
+                @include button-border(#fff, 16px 32px, $color-dark);   
             }
         }
     }
@@ -184,8 +240,18 @@
     background-repeat: repeat-y;
     background-size: auto;
 
+    @media screen and (max-width: 1430px) {
+        background-image: none;
+    }
+
     .container {
         @include flex(flex-start, center, column);
+
+        @media screen and (max-width: 450px) {
+            p {
+                text-align: justify;
+            }
+        }
 
         .glide {
             .glide__slides {
@@ -259,6 +325,10 @@
     background-position: -1px 64px;
     background-repeat: repeat-y;
     background-size: auto;
+
+    @media screen and (max-width: 1430px) {
+        background-image: none;
+    }
 
     form {
         @include flex(flex-start, flex-start, column);

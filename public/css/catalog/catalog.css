@@ -97,6 +97,11 @@ a:not(.btn) {
   width: 100%;
   gap: 20px;
 }
+@media screen and (max-width: 450px) {
+  #categories .categorias {
+    justify-content: center;
+  }
+}
 #categories .categorias .categoria {
   display: flex;
   justify-content: space-between;
@@ -111,6 +116,16 @@ a:not(.btn) {
   border: 1px solid #223a5b;
   transition: 0.2s linear;
 }
+@media screen and (max-width: 950px) {
+  #categories .categorias .categoria {
+    width: calc(30% - 20px);
+  }
+}
+@media screen and (max-width: 450px) {
+  #categories .categorias .categoria {
+    width: calc(100% - 20px);
+  }
+}
 #categories .categorias .categoria:hover {
   transform: translateY(-5px);
   cursor: pointer;
@@ -118,9 +133,12 @@ a:not(.btn) {
 #categories .categorias .categoria img {
   max-height: 150px;
   overflow-y: hidden;
+  border-radius: 5px;
 }
 #categories .categorias .categoria h4 {
   font-size: 1.4em;
+  text-align: center;
+  padding: 0 10px;
 }
 
 #call-to-action.catalogo {

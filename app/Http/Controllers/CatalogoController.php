@@ -32,8 +32,8 @@ class CatalogoController extends Controller
         $categoria = Category::where('name', $cat)->first();
         $produtos = Product::where('Category_id', $categoria->id)->get();
 
-        $tipos = Product::where('Category_id', $categoria->id)->select('tipo')->get();
-        $marcas = Product::where('Category_id', $categoria->id)->select('marca')->get();
+        $tipos = Product::where('Category_id', $categoria->id)->select('tipo')->distinct()->get();
+        $marcas = Product::where('Category_id', $categoria->id)->select('marca')->distinct()->get();
 
         return view('catalogo/category')
             ->with('cat', $cat)
@@ -57,8 +57,8 @@ class CatalogoController extends Controller
             ($name != 'all') ? ['name', 'LIKE', '%' . $name . '%'] : ['Category_id', $categoria->id]
         ])->get();
 
-        $tipos = Product::where('Category_id', $categoria->id)->select('tipo')->get();
-        $marcas = Product::where('Category_id', $categoria->id)->select('marca')->get();
+        $tipos = Product::where('Category_id', $categoria->id)->select('tipo')->distinct()->get();
+        $marcas = Product::where('Category_id', $categoria->id)->select('marca')->distinct()->get();
 
         return view('catalogo/category')
             ->with('cat', $cat)
