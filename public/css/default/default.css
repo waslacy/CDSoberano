@@ -150,18 +150,45 @@ html {
   justify-content: space-between;
   align-items: flex-start;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 #site-footer .container .col1 {
   width: calc(33% - 20px);
 }
-#site-footer .container .col2 {
+@media screen and (max-width: 920px) {
+  #site-footer .container .col1 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: inherit;
+    flex-direction: row;
+    margin-bottom: 20px;
+  }
+}
+#site-footer .container .col2, #site-footer .container .col3 {
   width: calc(33% - 20px);
 }
-#site-footer .container .col2 h3 {
+@media screen and (max-width: 920px) {
+  #site-footer .container .col2, #site-footer .container .col3 {
+    width: calc(50% - 20px);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 450px) {
+  #site-footer .container .col2, #site-footer .container .col3 {
+    width: calc(100% - 20px);
+    margin-bottom: 40px;
+    align-items: flex-start;
+  }
+}
+#site-footer .container .col2 h3, #site-footer .container .col3 h3 {
   color: #fff;
   margin-bottom: 20px;
 }
-#site-footer .container .col2 ul {
+#site-footer .container .col2 ul, #site-footer .container .col3 ul {
   list-style: none;
   display: flex;
   justify-content: inherit;
@@ -169,18 +196,30 @@ html {
   flex-direction: column;
   gap: 10px;
 }
-#site-footer .container .col2 ul a {
+#site-footer .container .col2 ul a.link-nav, #site-footer .container .col3 ul a.link-nav {
   color: #e8e8eb;
 }
-#site-footer .container .col2 ul a:hover {
+#site-footer .container .col2 ul a.link-nav:hover, #site-footer .container .col3 ul a.link-nav:hover {
   color: #90a6c5;
 }
 #site-footer .container .col3 {
-  width: calc(33% - 20px);
   display: flex;
   justify-content: inherit;
   align-items: inherit;
   flex-direction: column;
+  gap: 20px;
+}
+#site-footer .container .col3 li.link-nav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+  font-size: 1.2em;
+  color: #e8e8eb;
+}
+#site-footer .container .col3 li.link-nav svg {
+  fill: #e8e8eb;
 }
 #site-footer .container .col3 p {
   text-align: justify;
@@ -188,7 +227,6 @@ html {
   margin-bottom: 25px;
 }
 #site-footer .container .col3 a.btn {
-  align-self: flex-end;
   color: #fff;
   padding: 12px 28px;
   background-color: #fff;

@@ -35,6 +35,10 @@
         width: 100%;
         gap: 20px;
 
+        @media screen and (max-width: 450px) {
+            justify-content: center;
+        }
+
         .categoria {
             @include flex(space-between, center, column);
             width: calc(20% - 20px);
@@ -46,6 +50,14 @@
             border: 1px solid $color-blue;
             transition: 0.2s linear;
 
+            @media screen and (max-width: 950px) {
+                width: calc(30% - 20px);
+            }
+
+            @media screen and (max-width: 450px) {
+                width: calc(100% - 20px);
+            }
+
             &:hover {
                 transform: translateY(-5px);
                 cursor: pointer;
@@ -54,10 +66,13 @@
             img {
                 max-height: 150px;
                 overflow-y: hidden;
+                border-radius: 5px;
             }
 
             h4 {
                 font-size: 1.4em;
+                text-align: center;
+                padding: 0 10px;
             }
         }
     }

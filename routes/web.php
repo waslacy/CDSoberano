@@ -15,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::prefix('/')->group(function () {
+    Route::get('/login', 'UserController@index');
+    Route::post('/auth', 'UserController@auth');
+    
     Route::get('/', 'HomeController@index');
     Route::get('/home', 'HomeController@index');
     Route::post('/', 'HomeController@contact');

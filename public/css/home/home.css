@@ -73,6 +73,11 @@ a:not(.btn) {
   background-size: auto;
   width: 100%;
 }
+@media screen and (max-width: 1430px) {
+  #home .overlay {
+    background-image: none;
+  }
+}
 #home .container {
   display: flex;
   justify-content: center;
@@ -107,12 +112,19 @@ a:not(.btn) {
   background-repeat: repeat-y;
   background-size: auto;
 }
+@media screen and (max-width: 1430px) {
+  #sobre {
+    background-image: none;
+  }
+}
 #sobre .beneficios {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   flex-direction: row;
   margin-bottom: 80px;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 #sobre .beneficios .box {
   display: flex;
@@ -127,6 +139,19 @@ a:not(.btn) {
   background-color: #223a5b;
   color: #fff;
   transition: 0.2s linear;
+  text-align: center;
+}
+@media screen and (max-width: 920px) {
+  #sobre .beneficios .box {
+    gap: 15px;
+    padding: 30px 10px;
+    width: calc(33% - 15px);
+  }
+}
+@media screen and (max-width: 450px) {
+  #sobre .beneficios .box {
+    width: calc(100% - 20px);
+  }
 }
 #sobre .beneficios .box:hover {
   transform: translateY(-5px);
@@ -141,6 +166,15 @@ a:not(.btn) {
   align-items: flex-start;
   flex-direction: row;
   gap: 80px;
+}
+@media screen and (max-width: 768px) {
+  #sobre .sobre {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  #sobre .sobre h3 {
+    text-align: center;
+  }
 }
 #sobre .sobre h3 {
   font-size: 2em;
@@ -158,6 +192,11 @@ a:not(.btn) {
   background-position: 0 0;
   background-repeat: repeat-y;
   background-size: auto;
+}
+@media screen and (max-width: 1430px) {
+  #categorias {
+    background-image: none;
+  }
 }
 #categorias .container {
   display: flex;
@@ -180,6 +219,11 @@ a:not(.btn) {
   position: relative;
   transition: 0.2s linear;
   height: 220px;
+}
+@media screen and (max-width: 450px) {
+  #categorias .categorias .categoria {
+    width: calc(100% - 20px);
+  }
 }
 #categorias .categorias .categoria:hover {
   scale: 1.05;
@@ -216,6 +260,7 @@ a:not(.btn) {
 #categorias .categorias .categoria .overlay h3 {
   color: #fff;
   font-size: 1.6em;
+  text-align: center;
 }
 #categorias a.btn {
   padding: 12px 26px;
@@ -234,21 +279,38 @@ a:not(.btn) {
 
 #call-to-action.call1 {
   background-color: #1a1e34;
-  padding: 60px 0;
+  padding: 30px 0;
   background-image: url("../../src/pattern-blue-light.png");
   background-position: -2px -70px;
   background-repeat: repeat-y;
   background-size: auto;
+}
+@media screen and (max-width: 1430px) {
+  #call-to-action.call1 {
+    background-image: none;
+  }
 }
 #call-to-action.call1 .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 450px) {
+  #call-to-action.call1 .container {
+    justify-content: center;
+  }
+  #call-to-action.call1 .container h2 {
+    text-align: center !important;
+    margin-bottom: 20px !important;
+  }
 }
 #call-to-action.call1 .container h2 {
   color: #fff;
   margin-bottom: 0;
+  text-align: start;
+  flex: 1;
 }
 #call-to-action.call1 .container a.btn {
   padding: 16px 32px;
@@ -269,11 +331,21 @@ a:not(.btn) {
   background-repeat: repeat-y;
   background-size: auto;
 }
+@media screen and (max-width: 1430px) {
+  #depoimentos {
+    background-image: none;
+  }
+}
 #depoimentos .container {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
+}
+@media screen and (max-width: 450px) {
+  #depoimentos .container p {
+    text-align: justify;
+  }
 }
 #depoimentos .container .glide .glide__slides {
   padding: 20px 0;
@@ -343,6 +415,11 @@ a:not(.btn) {
   background-position: -1px 64px;
   background-repeat: repeat-y;
   background-size: auto;
+}
+@media screen and (max-width: 1430px) {
+  #contato {
+    background-image: none;
+  }
 }
 #contato form {
   display: flex;

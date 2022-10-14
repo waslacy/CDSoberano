@@ -110,6 +110,16 @@ a:not(.btn) {
   margin-bottom: 40px;
   width: 100%;
 }
+@media screen and (max-width: 450px) {
+  #orcamento form .row {
+    flex-wrap: wrap;
+    margin-bottom: 0;
+  }
+  #orcamento form .row .form-group {
+    width: calc(100% - 20px) !important;
+    margin-bottom: 20px;
+  }
+}
 #orcamento form .row .form-group {
   width: calc(50% - 20px);
 }
@@ -141,4 +151,9 @@ a:not(.btn) {
 #orcamento form button:hover {
   background-color: #40312e;
   color: #fff;
+}
+@media screen and (max-width: 450px) {
+  #orcamento form button {
+    align-self: center;
+  }
 }/*# sourceMappingURL=orcamento.css.map */

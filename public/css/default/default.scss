@@ -67,13 +67,31 @@ html {
 
     .container {
         @include flex(space-between, flex-start, row);
+        flex-wrap: wrap;
 
         .col1 {
             width: calc(33% - 20px);
+
+            @media screen and (max-width: 920px) {
+                width: 100%;
+                @include flex(center, inherit, row);
+                margin-bottom: 20px;
+            }
         }
 
-        .col2 {
+        .col2, .col3 {
             width: calc(33% - 20px);
+
+            @media screen and (max-width: 920px) {
+                width: calc(50% - 20px);
+                @include flex(flex-start, center, column);
+            }
+
+            @media screen and (max-width: 450px) {
+                width: calc(100% - 20px);
+                margin-bottom: 40px;
+                align-items: flex-start;
+            }
 
             h3 {
                 color: #fff;
@@ -85,7 +103,7 @@ html {
                 @include flex(inherit, inherit, column);
                 gap: 10px;
 
-                a {
+                a.link-nav {
                     color: $color-gray-light;
 
                     &:hover {
@@ -96,8 +114,19 @@ html {
         }
 
         .col3 {
-            width: calc(33% - 20px);
             @include flex(inherit, inherit, column);
+            gap: 20px;
+
+            li.link-nav {
+                @include flex(flex-start, center, row);
+                gap: 10px;
+                font-size: 1.2em;
+                color: $color-gray-light;
+
+                svg {
+                    fill: $color-gray-light;
+                }
+            }
 
             p {
                 text-align: justify;
@@ -106,7 +135,6 @@ html {
             }
 
             a.btn {
-                align-self: flex-end;
                 color: #fff;
                 @include button-full(#fff, #111, 12px 28px, $color-gray-light, #111);
             }

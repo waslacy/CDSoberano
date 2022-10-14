@@ -100,11 +100,8 @@ section#categories .testimonials, section#testimonials .testimonials {
   margin-top: 30px;
 }
 section#categories .categories, section#categories .testimonials, section#testimonials .categories, section#testimonials .testimonials {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 40px;
 }
 section#categories .new, section#testimonials .new {
@@ -118,6 +115,10 @@ section#categories .new .category, section#categories .new .testimonial, section
   width: auto;
 }
 section#categories .category, section#categories .testimonial, section#testimonials .category, section#testimonials .testimonial {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
   padding: 24px 36px;
   width: calc(20% - 40px);
   min-width: 200px;

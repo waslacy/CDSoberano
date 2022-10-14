@@ -251,7 +251,7 @@
 
     <section id="call-to-action" class="call1">
         <div class="container">
-            <h2>Você precisa, Nós suprimos!</h2>
+            <h2>Você precisa, <br> Nós suprimos!</h2>
 
             <a href="/orcamento" class="btn">Solicite um orçamento</a>
         </div>
