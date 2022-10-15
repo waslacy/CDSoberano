@@ -4,7 +4,7 @@
     <section id="home">
         <div class="overlay">
             <div class="container">
-                <h1>Reduza custos e amplie seu negócio!</h1>
+                <h1>Seja qual for a necessidade <br> o Soberano fornece!</h1>
                 <a href="/orcamento" class="btn">Solicite um orçamento</a>
             </div>
         </div>
@@ -12,7 +12,7 @@
 
     <section id="sobre">
         <div class="container">
-            <h2>Se você procura: </h2>
+            <h2>Se você precisa...</h2>
             <div class="beneficios">
                 <div class="box">
                     <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="60px" height="60px"
@@ -208,7 +208,7 @@
                         </g>
                     </svg>
 
-                    <h3>Ganho de tempo</h3>
+                    <h3>Economia de tempo</h3>
                 </div>
             </div>
 
@@ -219,11 +219,11 @@
 
                 <div class="right-column">
                     <h3>Soberano Centro de Distribuição</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident ratione officiis nisi distinctio
-                        id dolore voluptatum laudantium? Pariatur, id obcaecati nihil, totam ipsum, impedit cupiditate et
-                        doloremque asperiores itaque quia.Officiis pariatur nostrum molestias eos magni nobis laborum totam
-                        fuga itaque! Sequi, nostrum recusandae, minus ad maiores officiis quo, quisquam perferendis at
-                        beatae repellendus labore hic assumenda delectus totam nesciunt.</p>
+                    <p>
+                        O Soberano nasceu para prover... <br> <br>
+                        Nossa missão é levar sempre o melhor produto até você e pelo valor que cabe em seu bolso. Independente da necessidade, nós buscamos, orçamos e garantimos que seu pedido chegará voando em nossas asas. <br> <br>
+                        Entre em contato e poupe seu tempo e dinheiro.
+                    </p>
                 </div>
             </div>
         </div>
@@ -232,7 +232,7 @@
     <section id="categorias" class="brown">
         <div class="container">
             <h2>Categorias</h2>
-            <p>aaaaaaaaaaaaaaaaa</p>
+            <p>Tudo o que você precisar!</p>
 
             <div class="categorias">
                 @foreach ($categorias as $c)
@@ -312,7 +312,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="message">Mensagem</label>
+                    <label for="message">Em que podemos ajudar?</label>
                     <textarea name="message" cols="30" rows="6" placeholder="Mensagem"></textarea>
                 </div>
 

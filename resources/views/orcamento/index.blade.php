@@ -45,7 +45,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="message">Conte um pouco mais do que deseja</label>
+                    <label for="message">Em que podemos ajudar?</label>
                     <textarea name="message" cols="30" rows="6" placeholder="Mensagem" required></textarea>
                 </div>
 

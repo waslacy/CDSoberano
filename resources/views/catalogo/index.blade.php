@@ -11,7 +11,7 @@
 
     <section id="categories">
         <div class="container">
-            <h2>Escolha qual categoria de produtos vai desejar</h2>
+            <h2>Tudo o que você precisar!</h2>
 
             <div class="categorias">
                 <div class="categorias">
