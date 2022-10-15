@@ -57,7 +57,7 @@
         gap: 20px;
 
         @media screen and (max-width: 450px) {
-            justify-content: center !important;
+            @include flex(center, flex-start, row);
         }
 
         .box {
@@ -141,7 +141,7 @@
         gap: 20px;
 
         @media screen and (max-width: 450px) {
-            justify-content: center !important;
+            @include flex(center, flex-start, row);
         }
 
         .categoria {
