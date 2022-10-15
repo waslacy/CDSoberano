@@ -52,6 +52,7 @@
             @media screen and (max-width: 450px) {
                 flex-wrap: wrap;
                 margin-bottom: 0;
+                justify-content: center;
 
                 .form-group {
                     width: calc(100% - 20px) !important;

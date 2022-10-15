@@ -11,6 +11,10 @@
         flex-wrap: wrap;
         gap: 20px;
 
+        @media screen and (max-width: 450px) {
+            justify-content: center;
+        }
+
         .form-group {
             @include flex(flex-start, flex-start, column);
 

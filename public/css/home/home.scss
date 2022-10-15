@@ -56,6 +56,10 @@
         flex-wrap: wrap;
         gap: 20px;
 
+        @media screen and (max-width: 450px) {
+            justify-content: center;
+        }
+
         .box {
             @include flex(center, center, column);
             gap: 30px;
@@ -135,6 +139,10 @@
         flex-wrap: wrap;
         width: 100%;
         gap: 20px;
+
+        @media screen and (max-width: 450px) {
+            justify-content: center;
+        }
 
         .categoria {
             width: calc(33% - 20px);
