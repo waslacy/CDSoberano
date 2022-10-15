@@ -126,6 +126,14 @@ a:not(.btn) {
   flex-wrap: wrap;
   gap: 20px;
 }
+@media screen and (max-width: 450px) {
+  #sobre .beneficios {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+  }
+}
 #sobre .beneficios .box {
   display: flex;
   justify-content: center;
@@ -212,6 +220,14 @@ a:not(.btn) {
   flex-wrap: wrap;
   width: 100%;
   gap: 20px;
+}
+@media screen and (max-width: 450px) {
+  #categorias .categorias {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+  }
 }
 #categorias .categorias .categoria {
   width: calc(33% - 20px);

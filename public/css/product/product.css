@@ -72,6 +72,11 @@ a:not(.btn) {
   flex-wrap: wrap;
   gap: 20px;
 }
+@media screen and (max-width: 450px) {
+  #filtro .container {
+    justify-content: center;
+  }
+}
 #filtro .container .form-group {
   display: flex;
   justify-content: flex-start;

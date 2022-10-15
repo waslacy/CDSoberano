@@ -114,6 +114,7 @@ a:not(.btn) {
   #orcamento form .row {
     flex-wrap: wrap;
     margin-bottom: 0;
+    justify-content: center;
   }
   #orcamento form .row .form-group {
     width: calc(100% - 20px) !important;
