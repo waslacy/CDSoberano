@@ -66,6 +66,7 @@ a:not(.btn) {
   background-size: cover;
 }
 #home .overlay {
+  background-color: rgba(26, 30, 52, 0.85);
   width: 100%;
 }
 @media screen and (max-width: 1430px) {
