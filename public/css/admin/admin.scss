@@ -2,7 +2,7 @@
 
 body {
     @include flex(center, center, column);
-    height: 100vh;
+    min-height: 100vh;
     background-color: $color-gray-dark;
 }
 
@@ -10,7 +10,7 @@ section#categories, section#testimonials {
     border-radius: 5px;
     padding: 50px 60px;
     box-shadow: 2px 2px 10px rgba($color: #000, $alpha: 0.6);
-    min-width: 800px;
+    width: 900px;
     margin-bottom: 50px;
 
     .header {
@@ -81,7 +81,7 @@ section#products {
     border-radius: 5px;
     padding: 50px 60px;
     box-shadow: 2px 2px 10px rgba($color: #000, $alpha: 0.6);
-    min-width: 800px;
+    width: 900px;
 
     .header {
         @include flex(space-between, center, row-reverse);
@@ -152,7 +152,7 @@ section#products {
     border-radius: 5px;
     padding: 50px 60px;
     box-shadow: 2px 2px 10px rgba($color: #000, $alpha: 0.6);
-    min-width: 800px;
+    width: 900px;
 
     .header {
         @include flex(space-between, center, row-reverse);

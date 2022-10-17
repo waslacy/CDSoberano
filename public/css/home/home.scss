@@ -9,11 +9,6 @@
 
 
     .overlay {
-        background-color: rgba($color: $color-blue-dark, $alpha: 0.85);
-        background-image: url('../../src/pattern-blue-light.png');
-        background-position: 0 17px;
-        background-repeat: repeat-y;
-        background-size: auto;
         width: 100%;
 
         @media screen and (max-width: 1430px) {

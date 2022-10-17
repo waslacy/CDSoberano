@@ -63,7 +63,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #434447;
 }
 
@@ -71,7 +71,7 @@ section#categories, section#testimonials {
   border-radius: 5px;
   padding: 50px 60px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
-  min-width: 800px;
+  width: 900px;
   margin-bottom: 50px;
 }
 section#categories .header, section#testimonials .header {
@@ -140,7 +140,7 @@ section#products {
   border-radius: 5px;
   padding: 50px 60px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
-  min-width: 800px;
+  width: 900px;
 }
 section#products .header {
   display: flex;
@@ -209,7 +209,7 @@ section#products .product h3 {
   border-radius: 5px;
   padding: 50px 60px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
-  min-width: 800px;
+  width: 900px;
 }
 #category-edit .header, #product-edit .header {
   display: flex;

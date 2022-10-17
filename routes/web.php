@@ -39,7 +39,7 @@ Route::prefix('/')->group(function () {
     Route::post('/admin/testimonial/{testi}', 'AdminController@editTestimonial');
     Route::get('/admin/testimonial/remove/{testi}', 'AdminController@removeTestimonial');
 
-    Route::get('/admin/{cat}', 'AdminCOntroller@listProducts');
+    Route::get('/admin/{cat}', 'AdminController@listProducts');
     Route::get('/admin/{cat}/edit/{prod}', 'AdminController@showEditProduct');
     Route::post('/admin/{cat}/edit/{prod}', 'AdminController@editProduct');
     Route::get('/admin/{cat}/remove/{prod}', 'AdminController@removeProduct');
