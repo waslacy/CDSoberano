@@ -7,8 +7,8 @@ $(document).ready(() => {
         }
     })
 
-    $('.menu-toggler').click(() =>{
-        $(this).toggleClass("active");
+    $('.menu-toggler').click(() => {
+        $('.menu-toggler').toggleClass("active");
         $(".site-nav").toggleClass("active");
     });
 
