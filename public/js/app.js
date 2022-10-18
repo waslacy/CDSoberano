@@ -7,10 +7,14 @@ $(document).ready(() => {
         }
     })
 
-    $('.menu-toggler').click(function(){
+    $('.menu-toggler').click(() =>{
         $(this).toggleClass("active");
         $(".site-nav").toggleClass("active");
-      });
+    });
+
+    $('.link-nav').click(() => {
+        $('.menu-toggler').removeClass("active");
+    })
 })
 
 
