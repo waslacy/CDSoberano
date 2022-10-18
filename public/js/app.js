@@ -13,6 +13,7 @@ $(document).ready(() => {
     });
 
     $('.link-nav').click(() => {
+        console.log('a')
         $('.menu-toggler').removeClass('active');
     })
 })
