@@ -165,6 +165,9 @@ html {
   #site-header .menu-toggler {
     display: block !important;
   }
+  #site-header .menu-toggler span {
+    color: #40312e !important;
+  }
   #site-header .site-nav {
     position: fixed !important;
     height: 100vh !important;
@@ -184,12 +187,10 @@ html {
     display: block !important;
     font-size: 30px !important;
     margin: 30px 0 !important;
+    color: #40312e !important;
   }
   #site-header .sticky .site-nav {
     background-color: #f1f1f1 !important;
-  }
-  #site-header .sticky .site-nav a {
-    color: #fff !important;
   }
   #site-header .site-nav.active {
     right: 0 !important;

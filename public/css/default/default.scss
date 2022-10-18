@@ -87,6 +87,10 @@ html {
     @media screen and (max-width: 980px){
         .menu-toggler{
           display: block !important;
+
+          span {
+            color: $color-brown-dark !important;
+          }
         }
       
         .site-nav{
@@ -110,15 +114,12 @@ html {
           display: block !important;
           font-size: 30px !important;
           margin: 30px 0 !important;
+          color: $color-brown-dark !important;
 
         }
       
         .sticky .site-nav{
           background-color: #f1f1f1 !important;
-
-          a {
-            color: #fff !important;
-          }
         }
         
         .site-nav.active{
