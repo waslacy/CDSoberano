@@ -182,6 +182,7 @@ html {
   #site-header .site-nav ul {
     display: flex;
     flex-direction: column !important;
+    gap: 40px !important;
   }
   #site-header .site-nav a {
     display: block !important;
