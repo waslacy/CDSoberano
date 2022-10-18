@@ -165,8 +165,8 @@ html {
   #site-header .menu-toggler {
     display: block !important;
   }
-  #site-header .menu-toggler span {
-    color: #40312e !important;
+  #site-header .menu-toggler:active span {
+    background-color: #40312e !important;
   }
   #site-header .site-nav {
     position: fixed !important;
