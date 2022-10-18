@@ -23,6 +23,12 @@
             <a href="/" class="fixed"><img src="/src/logo-branco.png" alt="Logo Soberano" width="200"></a>
             <a href="/" class="sticky"><img src="/src/logo.png" alt="Logo Soberano" width="200"></a>
 
+            <button class="menu-toggler">
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+
             <nav class="site-nav">
                 <ul>
                     <li><a href="/home#home" class="link-nav">Home</a></li>

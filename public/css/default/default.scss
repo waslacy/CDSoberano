@@ -26,18 +26,42 @@ html {
         }
 
         .site-nav a.link-nav {
-            color: $color-dark-light !important;
+            color: $color-gray-dark;
             @include linkAfter($color-blue, 2px);
 
             &:hover{
                 color: $color-blue !important;
             }
         }
+
+        .menu-toggler span{
+            background-color: $color-brown-dark;
+          }
     }
 
     a.sticky {
         display: none
     }
+
+    .menu-toggler{
+        background: none;
+        width: 30px;
+        border: none;
+        cursor: pointer;
+        position: relative;
+        outline: none;
+        z-index: 999;
+        display: none;
+
+        span{
+            display: block;
+            height: 3px;
+            background-color: #fff;
+            margin: 6px 0;
+            position: relative;
+            transition: .3s linear;
+          }
+      }
 
     .container {
         @include flex(space-between, center, row);
@@ -59,6 +83,62 @@ html {
             }
         }
     }
+
+    @media screen and (max-width: 980px){
+        .menu-toggler{
+          display: block !important;
+        }
+      
+        .site-nav{
+          position: fixed !important;
+          height: 100vh !important;
+          width: 100% !important;
+          background-color: $color-brown-light !important;
+          top: 0 !important;
+          right: -100% !important;
+          max-width: 400px !important;
+          padding: 80px 50px !important;
+          transition: .3s linear !important;
+          
+          ul {
+            display: flex;
+            flex-direction: column !important;
+          }
+        }
+      
+        .site-nav a{
+          display: block !important;
+          font-size: 30px !important;
+          margin: 30px 0 !important;
+
+        }
+      
+        .sticky .site-nav{
+          background-color: #f1f1f1 !important;
+
+          a {
+            color: #fff !important;
+          }
+        }
+        
+        .site-nav.active{
+          right: 0 !important;
+        }
+      
+        .menu-toggler.active span:nth-child(1){
+          transform: rotate(-45deg) !important;
+          top: 4px !important;
+        }
+      
+        .menu-toggler.active span:nth-child(2){
+          opacity: 0 !important;
+        }
+      
+        .menu-toggler.active span:nth-child(3){
+          transform: rotate(45deg) !important;
+          bottom: 14px !important;
+        }
+      }
 }
 
 #site-footer {

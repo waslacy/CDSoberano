@@ -6,6 +6,11 @@ $(document).ready(() => {
             $('#site-header').removeClass('sticky')
         }
     })
+
+    $('.menu-toggler').click(function(){
+        $(this).toggleClass("active");
+        $(".site-nav").toggleClass("active");
+      });
 })
 
 
