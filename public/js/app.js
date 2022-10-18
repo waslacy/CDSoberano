@@ -13,8 +13,8 @@ $(document).ready(() => {
     });
 
     $('.link-nav').click(() => {
-        console.log('a')
         $('.menu-toggler').toggleClass('active');
+        $('.site-nav').toggleClass('active')
     })
 })
 
