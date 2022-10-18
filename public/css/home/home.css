@@ -62,7 +62,7 @@ a:not(.btn) {
   height: 80vh;
   max-height: 800px;
   padding: 0;
-  background: url("../../src/home-banner.jpg") center center;
+  background: url("../../src/home-banner.webp") center center;
   background-size: cover;
 }
 #home .overlay {
@@ -103,7 +103,7 @@ a:not(.btn) {
 }
 
 #sobre {
-  background-image: url("../../src/pattern-blue-dark.png");
+  background-image: url("../../src/pattern-blue-dark.webp");
   background-position: bottom left;
   background-repeat: repeat-y;
   background-size: auto;
@@ -192,7 +192,7 @@ a:not(.btn) {
 }
 
 #categorias {
-  background-image: url("../../src/pattern-brown-dark.png");
+  background-image: url("../../src/pattern-brown-dark.webp");
   background-position: 0 0;
   background-repeat: repeat-y;
   background-size: auto;
@@ -292,7 +292,7 @@ a:not(.btn) {
 #call-to-action.call1 {
   background-color: #1a1e34;
   padding: 30px 0;
-  background-image: url("../../src/pattern-blue-light.png");
+  background-image: url("../../src/pattern-blue-light.webp");
   background-position: -2px -70px;
   background-repeat: repeat-y;
   background-size: auto;
@@ -338,7 +338,7 @@ a:not(.btn) {
 }
 
 #depoimentos {
-  background-image: url("../../src/pattern-blue-dark.png");
+  background-image: url("../../src/pattern-blue-dark.webp");
   background-position: 0 -55px;
   background-repeat: repeat-y;
   background-size: auto;
@@ -368,7 +368,7 @@ a:not(.btn) {
   align-items: center;
   flex-direction: column;
   background-color: rgba(116, 117, 128, 0.2);
-  background-image: url("../../src/aspas-retas.png");
+  background-image: url("../../src/aspas-retas.webp");
   background-repeat: no-repeat;
   background-position: 20px 0;
   background-size: 140px;
@@ -423,7 +423,7 @@ a:not(.btn) {
 }
 
 #contato {
-  background-image: url("../../src/pattern-brown-dark.png");
+  background-image: url("../../src/pattern-brown-dark.webp");
   background-position: -1px 64px;
   background-repeat: repeat-y;
   background-size: auto;

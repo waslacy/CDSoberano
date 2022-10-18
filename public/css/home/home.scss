@@ -4,7 +4,7 @@
     height: 80vh;
     max-height: 800px;
     padding: 0;
-    background: url('../../src/home-banner.jpg') center center;
+    background: url('../../src/home-banner.webp') center center;
     background-size: cover;
 
 
@@ -37,7 +37,7 @@
 }
 
 #sobre {
-    background-image: url('../../src/pattern-blue-dark.png');
+    background-image: url('../../src/pattern-blue-dark.webp');
     background-position: bottom left;
     background-repeat: repeat-y;
     background-size: auto;
@@ -117,7 +117,7 @@
 }
 
 #categorias {
-    background-image: url('../../src/pattern-brown-dark.png');
+    background-image: url('../../src/pattern-brown-dark.webp');
     background-position: 0 0;
     background-repeat: repeat-y;
     background-size: auto;
@@ -202,7 +202,7 @@
     &.call1 {
         background-color: $color-blue-dark;
         padding: 30px 0;
-        background-image: url('../../src/pattern-blue-light.png');
+        background-image: url('../../src/pattern-blue-light.webp');
         background-position: -2px -70px;
         background-repeat: repeat-y;
         background-size: auto;
@@ -239,7 +239,7 @@
 }
 
 #depoimentos {
-    background-image: url('../../src/pattern-blue-dark.png');
+    background-image: url('../../src/pattern-blue-dark.webp');
     background-position: 0 -55px;
     background-repeat: repeat-y;
     background-size: auto;
@@ -264,7 +264,7 @@
                 .glide__slide {
                     @include flex(space-between, center, column);
                     background-color: rgba($color: $color-gray, $alpha: 0.2);
-                    background-image: url('../../src/aspas-retas.png');
+                    background-image: url('../../src/aspas-retas.webp');
                     background-repeat: no-repeat;
                     background-position: 20px 0;
                     background-size: 140px;
@@ -325,7 +325,7 @@
 }
 
 #contato {
-    background-image: url('../../src/pattern-brown-dark.png');
+    background-image: url('../../src/pattern-brown-dark.webp');
     background-position: -1px 64px;
     background-repeat: repeat-y;
     background-size: auto;

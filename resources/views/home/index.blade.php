@@ -214,7 +214,7 @@
 
             <div class="sobre">
                 <div class="left-column">
-                    <img src="src/simbolo-soberano.png" alt="Simbolo Soberano" width="280px">
+                    <img src="src/simbolo-soberano.webp" alt="Simbolo Soberano" width="280px">
                 </div>
 
                 <div class="right-column">

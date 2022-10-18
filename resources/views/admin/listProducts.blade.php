@@ -31,7 +31,7 @@
                 @endforeach
 
                 <a href="/admin/{{$cat}}/edit/novo" class="product">
-                    <img src="/src/add.png" alt="produto imagem" width="100">
+                    <img src="/src/add.webp" alt="produto imagem" width="100">
                     <h3>Novo</h3>
                 </a>
             </div>

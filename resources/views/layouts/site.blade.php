@@ -20,8 +20,8 @@
 <body>
     <header id="site-header">
         <div class="container">
-            <a href="/" class="fixed"><img src="/src/logo-branco.png" alt="Logo Soberano" width="200"></a>
-            <a href="/" class="sticky"><img src="/src/logo.png" alt="Logo Soberano" width="200"></a>
+            <a href="/" class="fixed"><img src="/src/logo-branco.webp" alt="Logo Soberano" width="200"></a>
+            <a href="/" class="sticky"><img src="/src/logo.webp" alt="Logo Soberano" width="200"></a>
 
             <button class="menu-toggler">
                 <span></span>
@@ -52,7 +52,7 @@
     <section id="site-footer">
         <div class="container">
             <div class="col1">
-                <a href="/"><img src="/src/logo-branco.png" alt="Logo Soberano" width="260"></a>
+                <a href="/"><img src="/src/logo-branco.webp" alt="Logo Soberano" width="260"></a>
             </div>
 
             <div class="col2">
