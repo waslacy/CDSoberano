@@ -13,7 +13,7 @@ $(document).ready(() => {
     });
 
     $('.link-nav').click(() => {
-        $('.menu-toggler').removeClass("active");
+        $('.menu-toggler').removeClass('active');
     })
 })
 
