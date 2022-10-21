@@ -102,6 +102,30 @@ a:not(.btn) {
   width: 100%;
   font-size: 1.3em;
 }
+#orcamento form .form-group#group-arquivo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  gap: 20px;
+  margin-top: 40px;
+}
+#orcamento form .form-group#group-arquivo label {
+  padding: 12px 28px;
+  background-color: transparent;
+  color: #40312e;
+  border: 1px solid #40312e;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-bottom: 0;
+}
+#orcamento form .form-group#group-arquivo label:hover {
+  background-color: #40312e;
+  color: #fff;
+}
+#orcamento form .form-group#group-arquivo input[type=file] {
+  display: none;
+}
 #orcamento form .row {
   display: flex;
   justify-content: space-between;

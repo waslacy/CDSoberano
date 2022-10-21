@@ -33,6 +33,7 @@ class SendOrcamento extends Mailable
         ->from(config('mail.from.address'))
         ->subject('Novo Orçamento solicitado (SOBERANO')
         ->view('orcamento/orcamento')
+        ->attach(public_path('src/orcamentos/' .$this->data['arquivo']))
         ->with('data', $this->data);
     }
 }

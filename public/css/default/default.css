@@ -221,6 +221,12 @@ html {
 #site-footer .container .col1 {
   width: calc(33% - 20px);
 }
+#site-footer .container .col1 h4 {
+  color: #fff;
+  margin-top: 30px;
+  font-size: 1.2em;
+  font-weight: 400;
+}
 @media screen and (max-width: 920px) {
   #site-footer .container .col1 {
     width: 100%;

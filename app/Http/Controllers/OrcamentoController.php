@@ -19,11 +19,19 @@ class OrcamentoController extends Controller
 
     public function orcamento(Request $request)
     {
+        if ($request->arquivo){
+            $arquivo = $request->arquivo;
+            $extension = $arquivo->extension();
+            $arquivoName = md5($arquivo->getClientOriginalName() . strtotime("now")) . '.' . $extension;
+            $arquivo->move(public_path('src/orcamentos'), $arquivoName);
+        }
+
         $data = array(
             'name' => $request->name,
             'email' => $request->email,
             'tel' => $request->tel,
             'cat' => $request->cat,
+            'arquivo' => $arquivoName ?? null,
             'message' => $request->message
         );
 

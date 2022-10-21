@@ -19,6 +19,26 @@ $(document).ready(() => {
 })
 
 
+// init Form Orçamento
+
+let input = $('#group-arquivo #arquivo')
+let span = $('#group-arquivo .nomeArquivo')
+
+input.on('input propertychange', (e) => {
+    let valueChanged = false;
+
+    if (e.type=='propertychange') {
+        valueChanged = e.originalEvent.propertyName=='value';
+    } else {
+        valueChanged = true;
+    }
+    if (valueChanged) {
+        span.html(input[0].files[0].name)
+    }
+})
+
+// End Form Orçamento
+
 new Glide('.glide', {
     type: 'carousel',
     startAt: 0,

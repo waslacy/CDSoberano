@@ -42,6 +42,21 @@
                 width: 100%;
                 font-size: 1.3em;
             }
+
+            &#group-arquivo {
+                @include flex(flex-start, center, row);
+                gap: 20px;
+                margin-top: 40px;
+
+                label {
+                    @include button-border($color-brown-dark, 12px 28px, #fff);
+                    margin-bottom: 0;
+                }
+
+                input[type="file"] {
+                    display: none
+                }
+            }
         }
 
         .row {

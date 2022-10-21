@@ -53,6 +53,7 @@
         <div class="container">
             <div class="col1">
                 <a href="/"><img src="/src/logo-branco.webp" alt="Logo Soberano" width="260"></a>
+                <h4>35.906.674/0001-34</h4>
             </div>
 
             <div class="col2">
