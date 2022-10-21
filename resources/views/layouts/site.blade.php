@@ -84,7 +84,6 @@
                 <nav class="site-nav">
                     <ul>
                         <li><a href="/home#home" class="link-nav">Políticas de Privacidade</a></li>
-                        <li><a href="/home#sobre" class="link-nav">Termos de uso</a></li>
                     </ul>
                 </nav>
             </div>
